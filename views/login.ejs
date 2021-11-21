@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/stylesheets/style_forIndex.css"> -->
+    <link rel="stylesheet" href="/stylesheets/style_login.css" media="screen and (min-width:481px)">
+    <link rel="stylesheet" href="/stylesheets/style_login_phone.css" media="screen and (max-width:480px)">
+
+    <title>Baseball Score | Login</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="green-field" class="row justify-content-center align-self-center bg-success">
+            <div id="brown-field" class="col border border-white m-3">
+                <div id="white-field" class="border border-dark rounded m-4">
+                    <div id="title_login">LOGIN</div>
+                    <form method="post" action="/login">
+                        <input type="text" id="login_name" name="username" placeholder="User"></input>
+                        <input type="password" id="login_pass" name="password" placeholder="Password"></input>
+                        <% if(error) {%>
+                            <h5 id="error-message" class="text-center">
+                                <%- error %>
+                            </h5>
+                            <%} %>
+                                <input type="submit" id="loginBtn" class="btn btn-success btn-lg"
+                                    value="Log in"></input>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- <script src="/javascripts/basic3.js"></script> -->
+    <script src="/javascripts/submit.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/stylesheets/style_forbatterBox.css"> -->
+    <link rel="stylesheet" href="/stylesheets/style_forbatterBox.css" media="screen and (min-width:481px)">
+    <link rel="stylesheet" href="/stylesheets/style_forbatterBox_phone.css" media="screen and (max-width:480px)">
+
+
+    <title>Baseball Score</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="green-field" class="row justify-content-center align-self-center bg-success">
+            <div id="brown-field" class="col border border-white m-3">
+                <div id="white-field" class="border border-dark rounded m-2">
+                    <a href=/login/logout id="logoutBtn" class="btn btn-primary">ログアウト</a>
+                    <!-- <div id="order">打順 : 1</div>
+                    <div id="name">新村一真 #2</div>
+                    <div id="box_count">第四打席</div>
+                    <input class="border border-dark rounded" id="result" value="右邪飛"></input>
+                    <ul id="boxCountList">
+                        <li id="box_count_1">第一打席：&nbsp;&nbsp;<p>左本</p>
+                        </li>
+                        <li id="box_count_2">第二打席：&nbsp;&nbsp;<p>三振</p>
+                        </li>
+                        <li id="box_count_3">第三打席：&nbsp;&nbsp;<p>一ゴロ</p>
+                        </li>
+                    </ul> -->
+                    <div id="order">打順 :
+                        <%- batterInfo[0].orderNo %>
+                    </div>
+                    <div id="name">
+                        <%- batterInfo[0].playerName %>
+                    </div>
+                    <div id="box_count">第
+                        <%- batterInfo[0].boxNum %>
+                            打席
+                    </div>
+                    <form action="/scorebook?_method=PUT" method="post">
+                        <!-- <input type="hidden" name="_method" value="PUT"> -->
+                        <input class="border border-dark rounded" id="result" name="result" onchange="changeFlg()"
+                            value="<%- batterInfo[0].boxResult %>" maxlength="3"></input>
+                        <input id="orderNum" type="hidden" name="orderNum" value=<%- batterInfo[0].orderNo %>>
+                        <input id="boxNum" type="hidden" name="boxNum" value=<%- batterInfo[0].boxNum %>>
+                        <input id="changeFlag" type="hidden" name="changeFlag" value=0>
+                        <input id="resultEnterBtn" class="btn btn-warning btn-lg" type="submit" value="入力">
+                    </form>
+                    <a href="/back" id="back" class="btn btn-primary">戻る</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- <script src="/javascripts/basic2.js"></script> -->
+    <script src="/javascripts/submit.js"></script>
+</body>
+
+</html>

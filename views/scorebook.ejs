@@ -1,0 +1,82 @@
+<html lang="ja">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/stylesheets/style2.css"> -->
+    <link rel="stylesheet" href="/stylesheets/style2.css" media="screen and (min-width:481px)">
+    <link rel="stylesheet" href="/stylesheets/style2_phone.css" media="screen and (max-width:480px)">
+    <title>Baseball Score</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="green-field" class="row justify-content-center align-self-center bg-success">
+            <div id="brown-field" class="col border border-white m-4">
+                <a href=/login/logout id="logoutBtn" class="btn btn-primary">ログアウト</a>
+                <h2>Socre Book</h2>
+                <h3>Playing member</h3>
+                <table id="playing-member" class="table table-light">
+                    <thead class="thead-dark text-center">
+                        <tr id="tablehead-tr">
+                            <th scope="col">打順</th>
+                            <th scope="col">氏名</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <% playersList.forEach((element,index)=> { %>
+                            <% if(element.order> 0){ %>
+
+                                <%- include("components/batter_2", { player : element, index:index}); %>
+                                    <% } %>
+                                        <% }); %>
+
+                    </tbody>
+                </table>
+
+                <% if(playersList.find(element=> element.order < 0)){ %>
+                        <h4>Changed member</h4>
+                        <table id="changed-member" class="table table-light">
+                            <thead class="thead-dark text-center">
+                                <tr id="tablehead2-tr">
+                                    <th scope="col">氏名</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% playersList.forEach((element,index)=> { %>
+                                    <% if(element.order <=0){ %>
+                                        <%- include("components/batter_changed", { player : element, index:index}); %>
+                                            <% }; %>
+                                                <% }); %>
+                            </tbody>
+                        </table>
+                        <% }; %>
+                            <a href=/games_history id="historyGameBtn" class="btn btn-success">試合終了</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- <script src="/javascripts/basic2.js"></script> -->
+    <script src="/javascripts/submit.js"></script>
+
+
+</body>
+
+</html>

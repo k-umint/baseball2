@@ -1,0 +1,109 @@
+html {
+    body {
+        div.container {
+            div#green-field {
+                // height: 500px;
+                width: 600px;
+                div#brown-field {
+                    // height: 80%;
+                    background-color: #8b4513;
+                    border-width: 5px !important;
+                    div#white-field {
+                        height: 600px;
+                        width: 90%;
+                        background-color: #fff;
+                        position: relative;
+                        #order {
+                            position: absolute;
+                            width: 33%;
+                            height: auto;
+                            top: 15px;
+                            left: 10px;
+                            font-size: xx-large;
+                            // border: solid 1px #bcbcbc;
+                        }
+                        #name {
+                            position: absolute;
+                            text-align: center;
+                            width: 90%;
+                            height: auto;
+                            top: 100px;
+                            left: 50%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 50px;
+                            font-weight: bold;
+                            // border: solid 1px #bcbcbc;
+                        }
+                        #box_count {
+                            position: absolute;
+                            text-align: center;
+                            width: 40%;
+                            height: auto;
+                            top: 200px;
+                            left: 50%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                            // border: solid 1px #bcbcbc;
+                        }
+                        #result {
+                            position: absolute;
+                            text-align: center;
+                            width: 80%;
+                            height: auto;
+                            top: 290px;
+                            left: 50%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 40px;
+                            // border: solid 1px #000;
+                            background-color: #b0c4de;
+                        }
+                        #resultEnterBtn {
+                            position: absolute;
+                            top: 400px;
+                            left: 50%;
+                            width: 200px;
+                            border: ridge 2px #000;
+                            transform: translateY(0) translateX(-50%);
+                        }
+                        #boxCountList {
+                            position: absolute;
+                            padding: 0;
+                            margin: 0;
+                            width: 75%;
+                            top: 400px;
+                            left: 50%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 25px;
+                            list-style: none;
+                            // text-align: center;
+                            #box_count_1 {
+                                margin: 5px 0;
+                                border: solid 1px #000;
+                                p {
+                                    display: inline-block;
+                                    margin: 0;
+                                }
+                            }
+                            #box_count_2 {
+                                margin: 5px 0;
+                                border: solid 1px #000;
+                                p {
+                                    display: inline-block;
+                                    margin: 0;
+                                }
+                            }
+                            #box_count_3 {
+                                margin: 5px 0;
+                                border: solid 1px #000;
+                                p {
+                                    display: inline-block;
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

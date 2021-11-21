@@ -1,0 +1,99 @@
+html body div.container div#green-field {
+  margin-top: 0;
+}
+
+html body div.container div#green-field div#brown-field {
+  background-color: #8b4513;
+  border-width: 5px !important;
+  padding: 0;
+}
+
+html body div.container div#green-field div#brown-field div#white-field {
+  height: 500px;
+  background-color: #fff;
+  position: relative;
+}
+
+html body div.container div#green-field div#brown-field div#white-field a#logoutBtn {
+  float: right;
+  margin: 10px 10px 0 0;
+}
+
+html body div.container div#green-field div#brown-field div#white-field #order_div {
+  position: absolute;
+  width: 33%;
+  height: auto;
+  top: 15px;
+  left: 10px;
+  font-size: xx-large;
+}
+
+html body div.container div#green-field div#brown-field div#white-field #name_div {
+  position: absolute;
+  text-align: center;
+  width: 90%;
+  height: auto;
+  top: 140px;
+  left: 20%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+html body div.container div#green-field div#brown-field div#white-field #name {
+  position: absolute;
+  text-align: center;
+  width: 60%;
+  height: auto;
+  top: 130px;
+  left: 65%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 30px;
+}
+
+html body div.container div#green-field div#brown-field div#white-field #position_div {
+  position: absolute;
+  text-align: center;
+  width: 40%;
+  height: auto;
+  top: 240px;
+  left: 20%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+html body div.container div#green-field div#brown-field div#white-field #position {
+  position: absolute;
+  text-align: center;
+  width: 30%;
+  height: auto;
+  top: 230px;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 30px;
+}
+
+html body div.container div#green-field div#brown-field div#white-field #resultEnterBtn {
+  position: absolute;
+  top: 350px;
+  left: 50%;
+  width: 200px;
+  border: ridge 2px #000;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+}
+
+html body div.container div#green-field div#brown-field div#white-field a#back {
+  position: absolute;
+  top: 420px;
+  left: 50%;
+  width: 80px;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+}
+/*# sourceMappingURL=style_forplayer_phone.css.map */

@@ -1,0 +1,82 @@
+html {
+    body {
+        div.container {
+            div#green-field {
+                // height: 500px;
+                width: 600px;
+                div#brown-field {
+                    // height: 80%;
+                    background-color: #8b4513;
+                    border-width: 5px !important;
+                    div#white-field {
+                        height: 600px;
+                        width: 90%;
+                        background-color: #fff;
+                        position: relative;
+                        #order_div {
+                            position: absolute;
+                            width: 33%;
+                            height: auto;
+                            top: 15px;
+                            left: 10px;
+                            font-size: xx-large;
+                            // border: solid 1px #bcbcbc;
+                        }
+                        #name_div {
+                            position: absolute;
+                            text-align: center;
+                            width: 90%;
+                            height: auto;
+                            top: 200px;
+                            left: 20%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                            font-weight: bold;
+                            // border: solid 1px #bcbcbc;
+                        }
+                        #name {
+                            position: absolute;
+                            text-align: center;
+                            width: 60%;
+                            height: auto;
+                            top: 200px;
+                            left: 60%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                        }
+                        #position_div {
+                            position: absolute;
+                            text-align: center;
+                            width: 40%;
+                            height: auto;
+                            top: 280px;
+                            left: 20%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                            font-weight: bold;
+                            // border: solid 1px #bcbcbc;
+                        }
+                        #position {
+                            position: absolute;
+                            text-align: center;
+                            width: 30%;
+                            height: auto;
+                            top: 270px;
+                            left: 45%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                        }
+                        #resultEnterBtn {
+                            position: absolute;
+                            top: 400px;
+                            left: 50%;
+                            width: 200px;
+                            border: ridge 2px #000;
+                            transform: translateY(0) translateX(-50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

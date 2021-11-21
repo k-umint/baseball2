@@ -1,0 +1,82 @@
+html {
+    body {
+        div.container {
+            div#green-field {
+                // height: 500px;
+                width: 600px;
+                div#brown-field {
+                    height: 700px;
+                    background-color: #8b4513;
+                    border-width: 5px !important;
+                    #title {
+                        position: absolute;
+                        text-align: center;
+                        color: #fff;
+                        width: 90%;
+                        height: auto;
+                        top: 100px;
+                        left: 50%;
+                        transform: translateY(0) translateX(-50%);
+                        font-size: 50px;
+                        font-weight: bold;
+                    }
+                    #date {
+                        position: absolute;
+                        text-align: center;
+                        color: #fff;
+                        width: 40%;
+                        height: auto;
+                        top: 230px;
+                        left: 50%;
+                        transform: translateY(0) translateX(-50%);
+                        font-size: 40px;
+                    }
+                    #vs {
+                        position: absolute;
+                        text-align: center;
+                        color: #fff;
+                        width: 40%;
+                        height: auto;
+                        top: 315px;
+                        left: 15%;
+                        transform: translateY(0) translateX(-50%);
+                        font-size: 30px;
+                    }
+                    #opponent {
+                        position: absolute;
+                        text-align: center;
+                        width: 60%;
+                        height: auto;
+                        top: 290px;
+                        left: 50%;
+                        transform: translateY(0) translateX(-50%);
+                        font-size: 40px;
+                        // border: solid 1px #000;
+                        background-color: #fff;
+                    }
+                    h3 {
+                        position: absolute;
+                        top: 360px;
+                        left: 50%;
+                        width: 100%;
+                        transform: translateY(0) translateX(-50%);
+                        color: yellow;
+                    }
+                    #gameStartBtn {
+                        position: absolute;
+                        width: 200px;
+                        top: 400px;
+                        left: 50%;
+                        transform: translateY(0) translateX(-50%);
+                    }
+                    #historyGameBtn {
+                        position: absolute;
+                        top: 600px;
+                        left: 50%;
+                        transform: translateY(0) translateX(-50%);
+                    }
+                }
+            }
+        }
+    }
+}

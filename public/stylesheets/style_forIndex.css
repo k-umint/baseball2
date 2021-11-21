@@ -1,0 +1,90 @@
+html body div.container div#green-field {
+  width: 600px;
+}
+
+html body div.container div#green-field div#brown-field {
+  height: 700px;
+  background-color: #8b4513;
+  border-width: 5px !important;
+}
+
+html body div.container div#green-field div#brown-field #title {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  width: 90%;
+  height: auto;
+  top: 100px;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+html body div.container div#green-field div#brown-field #date {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  width: 40%;
+  height: auto;
+  top: 230px;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 40px;
+}
+
+html body div.container div#green-field div#brown-field #vs {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  width: 40%;
+  height: auto;
+  top: 315px;
+  left: 15%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 30px;
+}
+
+html body div.container div#green-field div#brown-field #opponent {
+  position: absolute;
+  text-align: center;
+  width: 60%;
+  height: auto;
+  top: 290px;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 40px;
+  background-color: #fff;
+}
+
+html body div.container div#green-field div#brown-field h3 {
+  position: absolute;
+  top: 360px;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  color: yellow;
+}
+
+html body div.container div#green-field div#brown-field #gameStartBtn {
+  position: absolute;
+  width: 200px;
+  top: 400px;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+}
+
+html body div.container div#green-field div#brown-field #historyGameBtn {
+  position: absolute;
+  top: 600px;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+}
+/*# sourceMappingURL=style_forIndex.css.map */

@@ -1,0 +1,77 @@
+html body div.container div#green-field {
+  margin-top: 0;
+}
+
+html body div.container div#green-field div#brown-field {
+  background-color: #8b4513;
+  border-width: 5px !important;
+  padding: 0;
+}
+
+html body div.container div#green-field div#brown-field div#white-field {
+  height: 450px;
+  background-color: #fff;
+  position: relative;
+}
+
+html body div.container div#green-field div#brown-field div#white-field #title_login {
+  position: absolute;
+  text-align: center;
+  width: 90%;
+  height: auto;
+  top: 60px;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+html body div.container div#green-field div#brown-field div#white-field form input#login_name {
+  position: absolute;
+  width: 70%;
+  height: auto;
+  top: 150px;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 25px;
+  text-align: left;
+}
+
+html body div.container div#green-field div#brown-field div#white-field form input#login_pass {
+  position: absolute;
+  width: 70%;
+  height: auto;
+  top: 230px;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 25px;
+  text-align: left;
+}
+
+html body div.container div#green-field div#brown-field div#white-field form h5#error-message {
+  width: 100%;
+  position: absolute;
+  top: 290px;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  text-align: center;
+  color: red;
+}
+
+html body div.container div#green-field div#brown-field div#white-field form input#loginBtn {
+  position: absolute;
+  text-align: center;
+  width: 70%;
+  height: auto;
+  padding: 0;
+  top: 320px;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 30px;
+}
+/*# sourceMappingURL=style_login_phone.css.map */

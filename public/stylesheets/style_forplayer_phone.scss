@@ -1,0 +1,96 @@
+html {
+    body {
+        div.container {
+            div#green-field {
+                // height: 100%;
+                // width: 600px;
+                margin-top: 0;
+                div#brown-field {
+                    // height: 80%;
+                    background-color: #8b4513;
+                    border-width: 5px !important;
+                    padding: 0;
+                    div#white-field {
+                        height: 500px;
+                        // width: 90%;
+                        background-color: #fff;
+                        position: relative;
+                        a#logoutBtn {
+                            float: right;
+                            margin: 10px 10px 0 0;
+                        }
+                        #order_div {
+                            position: absolute;
+                            width: 33%;
+                            height: auto;
+                            top: 15px;
+                            left: 10px;
+                            font-size: xx-large;
+                            // border: solid 1px #bcbcbc;
+                        }
+                        #name_div {
+                            position: absolute;
+                            text-align: center;
+                            width: 90%;
+                            height: auto;
+                            top: 140px;
+                            left: 20%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                            font-weight: bold;
+                            // border: solid 1px #bcbcbc;
+                        }
+                        #name {
+                            position: absolute;
+                            text-align: center;
+                            width: 60%;
+                            height: auto;
+                            top: 130px;
+                            left: 65%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                        }
+                        #position_div {
+                            position: absolute;
+                            text-align: center;
+                            width: 40%;
+                            height: auto;
+                            top: 240px;
+                            left: 20%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                            font-weight: bold;
+                            // border: solid 1px #bcbcbc;
+                        }
+                        #position {
+                            position: absolute;
+                            text-align: center;
+                            width: 30%;
+                            height: auto;
+                            top: 230px;
+                            left: 50%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                        }
+                        #resultEnterBtn {
+                            position: absolute;
+                            top: 350px;
+                            left: 50%;
+                            width: 200px;
+                            border: ridge 2px #000;
+                            transform: translateY(0) translateX(-50%);
+                        }
+                        a#back {
+                            position: absolute;
+                            top: 420px;
+                            left: 50%;
+                            width: 80px;
+                            // border: ridge 2px #000;
+                            transform: translateY(0) translateX(-50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

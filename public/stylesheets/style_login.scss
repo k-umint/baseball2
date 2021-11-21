@@ -1,0 +1,70 @@
+html {
+    body {
+        div.container {
+            div#green-field {
+                // height: 500px;
+                width: 600px;
+                margin-top: 0;
+                div#brown-field {
+                    // height: 80%;
+                    background-color: #8b4513;
+                    border-width: 5px !important;
+                    padding: 0;
+                    div#white-field {
+                        height: 500px;
+                        // width: 90%;
+                        background-color: #fff;
+                        position: relative;
+                        #title_login {
+                            position: absolute;
+                            text-align: center;
+                            width: 90%;
+                            height: auto;
+                            top: 100px;
+                            left: 50%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 50px;
+                            font-weight: bold;
+                            // border: solid 1px #bcbcbc;
+                        }
+                        form {
+                            input#login_name {
+                                position: absolute;
+                                text-align: center;
+                                width: 40%;
+                                height: auto;
+                                top: 190px;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                font-size: 30px;
+                                text-align: left;
+                            }
+                            input#login_pass {
+                                position: absolute;
+                                text-align: center;
+                                width: 40%;
+                                height: auto;
+                                top: 260px;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                font-size: 30px;
+                                text-align: left;
+                            }
+                            input#loginBtn {
+                                position: absolute;
+                                text-align: center;
+                                width: 40%;
+                                height: auto;
+                                padding: 0;
+                                top: 350px;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                font-size: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

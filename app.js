@@ -15,7 +15,8 @@ var loginRouter = require('./routes/login');
 var usersRouter = require('./routes/users');
 
 // Infomations of database
-const connection = mysql.createConnection({
+// const connection = mysql.createConnection({
+const pool = mysql.createPool({
   host: 'us-cdbr-east-04.cleardb.com',
   user: 'b20f0b5811dcf3',
   password: '2e170047',
@@ -64,7 +65,7 @@ passport.use(new LocalStrategy({
 
     let getLoginInfoSql = `SELECT * FROM users WHERE name = "${username}"`;
 
-    connection.query(getLoginInfoSql, function (err, results, fields) {
+    pool.query(getLoginInfoSql, function (err, results, fields) {
 
       if (err) { throw err };
 

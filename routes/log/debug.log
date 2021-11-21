@@ -29111,3 +29111,133 @@
   }
 }
 [2021-11-21T12:11:55.230] [DEBUG] debug - =============================
+[2021-11-21T19:06:41.439] [DEBUG] debug - =============================
+[2021-11-21T19:06:41.439] [DEBUG] debug - Method : GET
+[2021-11-21T19:06:41.439] [DEBUG] debug - URL : /login
+[2021-11-21T19:06:41.440] [DEBUG] debug - session : {
+  "cookie": {
+    "originalMaxAge": 86400000,
+    "expires": "2021-11-22T10:06:41.435Z",
+    "httpOnly": true,
+    "path": "/"
+  }
+}
+[2021-11-21T19:06:41.440] [DEBUG] debug - =============================
+[2021-11-21T19:07:03.346] [DEBUG] debug - =============================
+[2021-11-21T19:07:03.346] [DEBUG] debug - Method : GET
+[2021-11-21T19:07:03.347] [DEBUG] debug - URL : /
+[2021-11-21T19:07:03.347] [DEBUG] debug - session : {
+  "cookie": {
+    "originalMaxAge": 86400000,
+    "expires": "2021-11-22T10:07:03.315Z",
+    "httpOnly": true,
+    "path": "/"
+  },
+  "flash": {},
+  "passport": {
+    "user": "kaito"
+  }
+}
+[2021-11-21T19:07:03.347] [DEBUG] debug - =============================
+[2021-11-21T19:10:34.235] [DEBUG] debug - =============================
+[2021-11-21T19:10:34.237] [DEBUG] debug - Method : GET
+[2021-11-21T19:10:34.237] [DEBUG] debug - URL : /login
+[2021-11-21T19:10:34.238] [DEBUG] debug - session : {
+  "cookie": {
+    "originalMaxAge": 86400000,
+    "expires": "2021-11-22T10:10:34.229Z",
+    "httpOnly": true,
+    "path": "/"
+  }
+}
+[2021-11-21T19:10:34.238] [DEBUG] debug - =============================
+[2021-11-21T19:10:44.200] [DEBUG] debug - =============================
+[2021-11-21T19:10:44.200] [DEBUG] debug - Method : GET
+[2021-11-21T19:10:44.200] [DEBUG] debug - URL : /
+[2021-11-21T19:10:44.200] [DEBUG] debug - session : {
+  "cookie": {
+    "originalMaxAge": 86399999,
+    "expires": "2021-11-22T10:10:44.167Z",
+    "httpOnly": true,
+    "path": "/"
+  },
+  "flash": {},
+  "passport": {
+    "user": "kaito"
+  }
+}
+[2021-11-21T19:10:44.200] [DEBUG] debug - =============================
+[2021-11-21T21:28:09.546] [DEBUG] debug - =============================
+[2021-11-21T21:28:09.547] [DEBUG] debug - Method : GET
+[2021-11-21T21:28:09.548] [DEBUG] debug - URL : /login
+[2021-11-21T21:28:09.548] [DEBUG] debug - session : {
+  "cookie": {
+    "originalMaxAge": 86400000,
+    "expires": "2021-11-22T12:28:09.539Z",
+    "httpOnly": true,
+    "path": "/"
+  }
+}
+[2021-11-21T21:28:09.548] [DEBUG] debug - =============================
+[2021-11-21T21:28:20.784] [DEBUG] debug - =============================
+[2021-11-21T21:28:20.785] [DEBUG] debug - Method : GET
+[2021-11-21T21:28:20.785] [DEBUG] debug - URL : /
+[2021-11-21T21:28:20.785] [DEBUG] debug - session : {
+  "cookie": {
+    "originalMaxAge": 86400000,
+    "expires": "2021-11-22T12:28:20.759Z",
+    "httpOnly": true,
+    "path": "/"
+  },
+  "flash": {},
+  "passport": {
+    "user": "kaito"
+  }
+}
+[2021-11-21T21:28:20.785] [DEBUG] debug - =============================
+[2021-11-21T21:35:07.588] [DEBUG] debug - =============================
+[2021-11-21T21:35:07.588] [DEBUG] debug - Method : GET
+[2021-11-21T21:35:07.588] [DEBUG] debug - URL : /games_history
+[2021-11-21T21:35:07.588] [DEBUG] debug - session : {
+  "cookie": {
+    "originalMaxAge": 86400000,
+    "expires": "2021-11-22T12:28:21.094Z",
+    "httpOnly": true,
+    "path": "/"
+  },
+  "flash": {},
+  "passport": {
+    "user": "kaito"
+  }
+}
+[2021-11-21T21:35:07.588] [DEBUG] debug - =============================
+[2021-11-21T21:35:11.520] [DEBUG] debug - =============================
+[2021-11-21T21:35:11.520] [DEBUG] debug - Method : GET
+[2021-11-21T21:35:11.520] [DEBUG] debug - URL : /
+[2021-11-21T21:35:11.520] [DEBUG] debug - session : {
+  "cookie": {
+    "originalMaxAge": 86400000,
+    "expires": "2021-11-22T12:35:08.116Z",
+    "httpOnly": true,
+    "path": "/"
+  },
+  "flash": {},
+  "passport": {
+    "user": "kaito"
+  }
+}
+[2021-11-21T21:35:11.520] [DEBUG] debug - =============================
+[2021-11-21T21:35:13.775] [DEBUG] debug - =============================
+[2021-11-21T21:35:13.775] [DEBUG] debug - Method : GET
+[2021-11-21T21:35:13.775] [DEBUG] debug - URL : /login
+[2021-11-21T21:35:13.775] [DEBUG] debug - session : {
+  "cookie": {
+    "originalMaxAge": 86400000,
+    "expires": "2021-11-22T12:35:13.761Z",
+    "httpOnly": true,
+    "path": "/"
+  },
+  "flash": {},
+  "passport": {}
+}
+[2021-11-21T21:35:13.775] [DEBUG] debug - =============================

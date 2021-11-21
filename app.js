@@ -16,10 +16,10 @@ var usersRouter = require('./routes/users');
 
 // Infomations of database
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'baseball_score'
+  host: 'us-cdbr-east-04.cleardb.com',
+  user: 'b20f0b5811dcf3',
+  password: '2e170047',
+  database: 'heroku_8f451d7112f306c'
 });
 
 var app = express();

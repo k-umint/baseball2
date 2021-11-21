@@ -24,7 +24,8 @@ const connection = mysql.createConnection({
 
 var app = express();
 
-var server = app.listen(3000, function () {
+const port = process.env.PORT || 3000;
+var server = app.listen(port, function () {
   console.log("Node.js is listening to PORT:" + server.address().port);
 });
 

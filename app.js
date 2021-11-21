@@ -22,7 +22,11 @@ const connection = mysql.createConnection({
   database: 'heroku_8f451d7112f306c'
 });
 
-connection.connect();
+//Connection to Database
+connection.connect(function (err) {
+  if (err) throw err;
+  console.log('Connected');
+});
 
 var app = express();
 
@@ -66,7 +70,7 @@ passport.use(new LocalStrategy({
 
     let getLoginInfoSql = `SELECT * FROM users WHERE name = "${username}"`;
 
-    pool.query(getLoginInfoSql, function (err, results, fields) {
+    connection.query(getLoginInfoSql, function (err, results, fields) {
 
       if (err) { throw err };
 

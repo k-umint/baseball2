@@ -9,8 +9,7 @@ const fs = require('fs');
 var passport = require('passport');
 
 // Infomations of database
-// const connection = mysql.createConnection({
-const pool = mysql.createPool({
+const connection = mysql.createConnection({
   host: 'us-cdbr-east-04.cleardb.com',
   user: 'b20f0b5811dcf3',
   password: '2e170047',
@@ -18,10 +17,11 @@ const pool = mysql.createPool({
 });
 
 //Connection to Database
-pool.connect(function (err) {
+connection.connect(function (err) {
   if (err) throw err;
   console.log('Connected');
 });
+
 
 //ログファイル出力
 var logDirectory = path.join(__dirname, './log');
@@ -112,7 +112,7 @@ router.get('/games_history', isLogined, function (req, res, next) {
   let SelectAllPlayersAndGameInnerJoin =
     `SELECT * FROM players JOIN game ON players.game_id = game.id ORDER BY game.date`;
 
-  pool.query(SelectAllPlayersAndGameInnerJoin, function (err, results, fields) {
+  connection.query(SelectAllPlayersAndGameInnerJoin, function (err, results, fields) {
 
     if (err) { throw err };
 
@@ -205,7 +205,7 @@ router.get('/scorebook/:gameId', isLogined, function (req, res, next) {
   let getAllBoxResultSql =
     `SELECT * FROM players WHERE game_id = ${gameId} ORDER BY batting_order ASC`;
 
-  pool.query(getAllBoxResultSql, function (err, result, fields) {
+  connection.query(getAllBoxResultSql, function (err, result, fields) {
     if (err) { throw err };
 
     // console.log(JSON.stringify(result, null, 2));
@@ -270,7 +270,7 @@ router.post('/members', isLogined, function (req, res, next) {
     let insertGameSql =
       `INSERT INTO game VALUES(0,"${dateItem}","${opponentItem}")`;
 
-    pool.query(insertGameSql, function (err, result, fields) {
+    connection.query(insertGameSql, function (err, result, fields) {
       if (err) {
         throw err;
       } else {
@@ -339,7 +339,7 @@ router.post('/scorebook', isLogined, function (req, res, next) {
   let insertFullSentence = 'INSERT INTO players VALUES' + insertValues;
 
   //データベースへの登録
-  pool.query(insertFullSentence, function (err, result, fields) {
+  connection.query(insertFullSentence, function (err, result, fields) {
     if (err) {
       throw err;
     } else {
@@ -388,7 +388,7 @@ router.post('/batterBox', isLogined, function (req, res, next) {
           WHERE batting_order = ${orderNo} 
           AND game_id = ${gameId}`;
 
-  pool.query(getBoxResultSql, function (err, result, fields) {
+  connection.query(getBoxResultSql, function (err, result, fields) {
 
     if (err) {
       console.log("err2" + err);
@@ -433,7 +433,7 @@ router.get('/player', isLogined, function (req, res, next) {
   let getPlayerInfoSql =
     `SELECT position FROM players WHERE batting_order = ${orderNum} AND name = "${playerName}" AND game_id = ${gameId}`;
 
-  pool.query(getPlayerInfoSql, function (err, result, fields) {
+  connection.query(getPlayerInfoSql, function (err, result, fields) {
 
     if (err) {
       console.log("err" + err);
@@ -499,7 +499,7 @@ router.put('/scorebook', isLogined, function (req, res, next) {
     let updateValues =
       `UPDATE players SET box_${boxNo} = "${boxResult}" WHERE game_id = ${gameId} AND batting_order = ${orderNo}`;
 
-    pool.query(updateValues, function (err, result, fields) {
+    connection.query(updateValues, function (err, result, fields) {
 
       if (err) { throw err };
 
@@ -549,7 +549,7 @@ router.post('/change', isLogined, function (req, res, next) {
     let minusChangedPlayerOrderSql =
       `UPDATE players SET batting_order = -${reqOrder} WHERE game_id = ${gameId} AND batting_order = ${reqOrder}`;
 
-    pool.query(minusChangedPlayerOrderSql, function (err, result, fields) {
+    connection.query(minusChangedPlayerOrderSql, function (err, result, fields) {
       if (err) { throw err }
 
       //そして交代後の選手を登録
@@ -557,13 +557,13 @@ router.post('/change', isLogined, function (req, res, next) {
         `INSERT INTO players VALUES
       (${reqOrder},"${reqPosition}","${reqPlayerName}",${gameId},"","","","","","","","","","")`;
 
-      pool.query(insertNewPlayerSql, function (err, result, fields) {
+      connection.query(insertNewPlayerSql, function (err, result, fields) {
         if (err) { throw err }
 
         let selectAllPlayersSql =
           `SELECT * FROM players WHERE game_id = ${gameId} ORDER BY batting_order ASC`
 
-        pool.query(selectAllPlayersSql, function (err, result, fields) {
+        connection.query(selectAllPlayersSql, function (err, result, fields) {
           if (err) { throw err }
 
           for (const iterator of result) {
@@ -595,13 +595,13 @@ router.post('/change', isLogined, function (req, res, next) {
     let updateNewPositionSql =
       `UPDATE players SET position = "${reqPosition}" WHERE game_id = ${gameId} AND batting_order = ${reqOrder}`;
 
-    pool.query(updateNewPositionSql, function (err, result, fields) {
+    connection.query(updateNewPositionSql, function (err, result, fields) {
       if (err) { throw err };
 
       let selectAllPlayersSql =
         `SELECT * FROM players WHERE game_id = ${gameId} ORDER BY batting_order ASC`
 
-      pool.query(selectAllPlayersSql, function (err, result, fields) {
+      connection.query(selectAllPlayersSql, function (err, result, fields) {
         if (err) { throw err }
 
         for (const iterator of result) {

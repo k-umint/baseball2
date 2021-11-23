@@ -15,6 +15,12 @@ html {
                         // width: 90%;
                         background-color: #fff;
                         position: relative;
+                        div#warningmessage {
+                            background-color: red;
+                            color: yellow;
+                            font-size: 15px;
+                            font-weight: bold;
+                        }
                         #title_login {
                             position: absolute;
                             text-align: center;

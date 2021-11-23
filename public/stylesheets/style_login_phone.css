@@ -14,6 +14,13 @@ html body div.container div#green-field div#brown-field div#white-field {
   position: relative;
 }
 
+html body div.container div#green-field div#brown-field div#white-field div#warningmessage {
+  background-color: red;
+  color: yellow;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 html body div.container div#green-field div#brown-field div#white-field #title_login {
   position: absolute;
   text-align: center;

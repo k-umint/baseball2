@@ -39,9 +39,9 @@ for (let i = 1; i < 10; i++) {
 
         // ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓動作確認用↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
-        if (key == Object.keys(positionObject)[i]) {
-            optionElement_position.selected = true;
-        }
+        // if (key == Object.keys(positionObject)[i]) {
+        //     optionElement_position.selected = true;
+        // }
 
         // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑動作確認用↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
@@ -91,40 +91,40 @@ for (let i = 1; i < 10; i++) {
     inputElement.setAttribute('maxlength', '15');
 
     // ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓動作確認用↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-    let playerName = ''
+    // let playerName = ''
 
-    switch (i) {
-        case 1:
-            playerName = '末廣風真';
-            break;
-        case 2:
-            playerName = '新村一真';
-            break;
-        case 3:
-            playerName = '山本樹';
-            break;
-        case 4:
-            playerName = '金崎素良';
-            break;
-        case 5:
-            playerName = '山田まさや';
-            break;
-        case 6:
-            playerName = '中野雄太';
-            break;
-        case 7:
-            playerName = '若井拓也';
-            break;
-        case 8:
-            playerName = '末廣海人';
-            break;
-        case 9:
-            playerName = '山川創至';
-            break;
+    // switch (i) {
+    //     case 1:
+    //         playerName = 'aaaa';
+    //         break;
+    //     case 2:
+    //         playerName = 'bbbb';
+    //         break;
+    //     case 3:
+    //         playerName = 'cccc';
+    //         break;
+    //     case 4:
+    //         playerName = 'dddd';
+    //         break;
+    //     case 5:
+    //         playerName = 'eeee';
+    //         break;
+    //     case 6:
+    //         playerName = 'ffff';
+    //         break;
+    //     case 7:
+    //         playerName = 'gggg';
+    //         break;
+    //     case 8:
+    //         playerName = 'hhhh';
+    //         break;
+    //     case 9:
+    //         playerName = 'iiii';
+    //         break;
 
-        default:
-            break;
-    }
+    //     default:
+    //         break;
+    // }
 
     inputElement.value = playerName;
     // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑動作確認用↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑

@@ -1,24 +1,29 @@
 html {
+    height: 100%;
     body {
-        div.container {
+        height: 100%;
+        div#main {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
             div#green-field {
-                // height: 500px;
+                height: 100%;
                 // width: 600px;
+                padding-top: 60px;
+                margin: 0 auto;
                 div#brown-field {
-                    height: 500px;
+                    height: 94%;
                     background-color: #8b4513;
                     border-width: 5px !important;
-                    a#logoutBtn {
-                        float: right;
-                        margin-top: 10px;
-                    }
+                    padding: 0;
                     #title {
                         position: absolute;
                         text-align: center;
                         color: #fff;
                         width: 90%;
                         height: auto;
-                        top: 50px;
+                        top: 30px;
                         left: 50%;
                         transform: translateY(0) translateX(-50%);
                         font-size: 40px;
@@ -30,7 +35,7 @@ html {
                         color: #fff;
                         width: 40%;
                         height: auto;
-                        top: 150px;
+                        top: 130px;
                         left: 25%;
                         // transform: translateY(0) translateX(-50%);
                         font-size: 30px;
@@ -41,7 +46,7 @@ html {
                         color: #fff;
                         width: 40%;
                         height: auto;
-                        top: 235px;
+                        top: 200px;
                         left: 17%;
                         transform: translateY(0) translateX(-50%);
                         font-size: 30px;
@@ -51,7 +56,7 @@ html {
                         text-align: center;
                         width: 60%;
                         height: auto;
-                        top: 210px;
+                        top: 180px;
                         left: 55%;
                         transform: translateY(0) translateX(-50%);
                         font-size: 30px;
@@ -70,13 +75,13 @@ html {
                     #gameStartBtn {
                         position: absolute;
                         width: 200px;
-                        top: 330px;
+                        top: 300px;
                         left: 50%;
                         transform: translateY(0) translateX(-50%);
                     }
                     #historyGameBtn {
                         position: absolute;
-                        top: 420px;
+                        top: 380px;
                         left: 50%;
                         transform: translateY(0) translateX(-50%);
                     }

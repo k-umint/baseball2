@@ -1,12 +1,16 @@
 html {
     body {
-        div.container {
+        div#main {
+            margin: 0;
+            padding: 0;
+            width: 100%;
             div#green-field {
                 // height: 500px;
                 width: 600px;
-                margin-top: 0;
+                padding-top: 60px;
+                margin: 0 auto;
                 div#brown-field {
-                    // height: 80%;
+                    height: 700px;
                     background-color: #8b4513;
                     border-width: 5px !important;
                     padding: 0;
@@ -15,18 +19,13 @@ html {
                         // width: 90%;
                         background-color: #fff;
                         position: relative;
-                        div#warningmessage {
-                            background-color: red;
-                            color: yellow;
-                            font-size: 20px;
-                            font-weight: bold;
-                        }
+                        margin: 20px;
                         #title_login {
                             position: absolute;
                             text-align: center;
                             width: 90%;
                             height: auto;
-                            top: 100px;
+                            top: 70px;
                             left: 50%;
                             transform: translateY(0) translateX(-50%);
                             font-size: 50px;
@@ -34,7 +33,7 @@ html {
                             // border: solid 1px #bcbcbc;
                         }
                         form {
-                            input#login_name {
+                            input#login_id {
                                 position: absolute;
                                 text-align: center;
                                 width: 40%;
@@ -44,6 +43,7 @@ html {
                                 transform: translateY(0) translateX(-50%);
                                 font-size: 30px;
                                 text-align: left;
+                                background-color: #dae3f3;
                             }
                             input#login_pass {
                                 position: absolute;
@@ -55,6 +55,7 @@ html {
                                 transform: translateY(0) translateX(-50%);
                                 font-size: 30px;
                                 text-align: left;
+                                background-color: #dae3f3;
                             }
                             input#loginBtn {
                                 position: absolute;
@@ -67,6 +68,19 @@ html {
                                 transform: translateY(0) translateX(-50%);
                                 font-size: 30px;
                             }
+                        }
+                        a#registBtn {
+                            // display: inline-block;
+                            position: absolute;
+                            text-align: center;
+                            text-decoration: underline;
+                            width: 40%;
+                            height: auto;
+                            padding: 0;
+                            top: 420px;
+                            left: 50%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
                         }
                     }
                 }

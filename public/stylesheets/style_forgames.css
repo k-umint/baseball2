@@ -1,45 +1,56 @@
-html body div.container div#green-field {
-  width: 600px;
-  margin-top: 30px;
+html body {
+  background-color: #f4f5f7;
 }
 
-html body div.container div#green-field div#brown-field {
+html body div#main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+html body div#main div#green-field {
+  width: 600px;
+  padding-top: 60px;
+  margin: 0 auto;
+}
+
+html body div#main div#green-field div#brown-field {
   height: 700px;
   background-color: #8b4513;
   border-width: 5px !important;
 }
 
-html body div.container div#green-field div#brown-field .list-group #scroll-container {
+html body div#main div#green-field div#brown-field .list-group #scroll-container {
   height: 550px;
   margin-top: 30px;
   overflow: auto;
 }
 
-html body div.container div#green-field div#brown-field .list-group #scroll-container a.scroll-item {
+html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item {
   overflow: hidden;
   margin-bottom: 10px;
 }
 
-html body div.container div#green-field div#brown-field .list-group #scroll-container a.scroll-item p {
+html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p {
   margin: 0;
 }
 
-html body div.container div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-date {
+html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-date {
   display: inline-block;
   font-size: 20px;
   width: 30%;
 }
 
-html body div.container div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-vs {
+html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-vs {
   display: inline-block;
 }
 
-html body div.container div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-opponent {
+html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-opponent {
   display: inline-block;
   font-size: 30px;
 }
 
-html body div.container div#green-field div#brown-field #goHomeBtn {
+html body div#main div#green-field div#brown-field #goHomeBtn {
   position: absolute;
   top: 620px;
   left: 50%;

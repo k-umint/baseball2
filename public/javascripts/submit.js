@@ -183,10 +183,15 @@ function getBoxResult(event) {
 
     let aTagId = event.target.id;
     let numArr = aTagId.split('-');
+
     let orderNum = numArr[0];
-    console.log(orderNum);
+    if (!orderNum) {
+        orderNum = numArr[1] * -1;
+    }
+    console.log("orderNum : " + orderNum);
 
     let nameDiv = document.getElementById(`name_${orderNum}`);
+    console.log("submit.js - 'nameDiv' : " + nameDiv.innerHTML);
     let playerName = nameDiv.innerHTML.trim();
 
     let inputTextOrder = document.createElement('input');

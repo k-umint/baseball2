@@ -1,15 +1,27 @@
 html {
     body {
-        div.container {
+        background-color: #f4f5f7;
+        div#main {
+            margin: 0;
+            padding: 0;
+            width: 100%;
             div#green-field {
                 // height: 500px;
                 width: 600px;
+                padding-top: 60px;
+                margin: 0 auto;
                 div#brown-field {
-                    // height: 80%;
+                    // height: 900px;
                     background-color: #8b4513;
                     border-width: 5px !important;
-                    h1 {
+                    h2 {
                         text-decoration: underline;
+                        color: aliceblue;
+                    }
+                    h3 {
+                        color: aliceblue;
+                    }
+                    h4 {
                         color: aliceblue;
                     }
                     table {
@@ -27,6 +39,11 @@ html {
                                             width: 250px;
                                             font-size: 30px;
                                             font-weight: bold;
+                                            // padding: 0;
+                                        }
+                                        a {
+                                            position: absolute;
+                                            right: 20px;
                                         }
                                     }
                                     div.collapsing {
@@ -100,6 +117,11 @@ html {
                                 }
                             }
                         }
+                    }
+                    a#historyGameBtn {
+                        position: absolute;
+                        right: 20px;
+                        top: 20px;
                     }
                 }
             }

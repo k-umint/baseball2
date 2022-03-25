@@ -13,6 +13,7 @@ const bcrypt = require('bcrypt');
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var usersRouter = require('./routes/users');
+const { Console } = require('console');
 
 // // Infomations of database
 // const connection = mysql.createConnection({
@@ -30,6 +31,12 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// let db_config = {
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'root',
+//   database: 'baseball_score'
+// }
 let db_config = {
   host: 'us-cdbr-east-04.cleardb.com',
   user: 'b20f0b5811dcf3',
@@ -46,7 +53,8 @@ function handleDisconnect() {
   connection.connect(function (err) {
     if (err) {
       console.log('ERROR.CONNECTION_DB: ', err);
-      setTimeout(handleDisconnect, 1000);
+      // setTimeout(handleDisconnect, 1000);
+      setTimeout(handleDisconnect, 180 * 60 * 8 * 1000);
     }
   });
 
@@ -101,8 +109,7 @@ passport.use(new LocalStrategy({
 }, function (req, username, password, done) {
   process.nextTick(function () {
     //処理書く
-
-    let getLoginInfoSql = `SELECT * FROM users WHERE name = "${username}"`;
+    let getLoginInfoSql = `SELECT * FROM users WHERE id = "${username}"`;
 
     connection.query(getLoginInfoSql, function (err, results, fields) {
 
@@ -116,7 +123,7 @@ passport.use(new LocalStrategy({
         }
       }
 
-      return done(null, false, { message: 'User or Password is incorrect' });
+      return done(null, false, { message: 'ID or Password is incorrect' });
     });
   })
 }));

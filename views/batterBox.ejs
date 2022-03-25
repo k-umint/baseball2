@@ -12,19 +12,35 @@
     <!-- <link rel="stylesheet" href="/stylesheets/style_forbatterBox.css"> -->
     <link rel="stylesheet" href="/stylesheets/style_forbatterBox.css" media="screen and (min-width:481px)">
     <link rel="stylesheet" href="/stylesheets/style_forbatterBox_phone.css" media="screen and (max-width:480px)">
+    <link rel="stylesheet" href="/stylesheets/header.css" media="screen and (min-width:481px)">
+    <link rel="stylesheet" href="/stylesheets/header_phone.css" media="screen and (max-width:480px)">
 
+    <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon2.ico">
 
-    <title>Baseball Score</title>
+    <title>Baseball Score | BatterBox</title>
+
+    <!-- アドレスバー等のブラウザのUIを非表示 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- default（Safariと同じ） / black（黒） / black-translucent（ステータスバーをコンテンツに含める） -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- ホーム画面に表示されるアプリ名 -->
+    <meta name="apple-mobile-web-app-title" content="Baseball Score">
+    <!-- ホーム画面に表示されるアプリアイコン -->
+    <!-- <link rel="apple-touch-icon" href="images/icons/icon-152x152.png"> -->
 </head>
 
 <body>
 
-    <div class="container">
-        <div id="green-field" class="row justify-content-center align-self-center bg-success">
-            <div id="brown-field" class="col border border-white m-3">
-                <div id="white-field" class="border border-dark rounded m-2">
-                    <a href=/login/logout id="logoutBtn" class="btn btn-primary">ログアウト</a>
-                    <!-- <div id="order">打順 : 1</div>
+    <%- include("components/header"); %>
+
+        <div id="main">
+            <!-- <div class="container"> -->
+            <!-- <div id="green-field" class="row justify-content-center align-self-center bg-success"> -->
+            <div id="green-field" class="row bg-success">
+                <div id="brown-field" class="col border border-white m-3">
+                    <div id="white-field" class="border border-dark rounded m-2">
+                        <!-- <div id="order">打順 : 1</div>
                     <div id="name">新村一真 #2</div>
                     <div id="box_count">第四打席</div>
                     <input class="border border-dark rounded" id="result" value="右邪飛"></input>
@@ -36,44 +52,49 @@
                         <li id="box_count_3">第三打席：&nbsp;&nbsp;<p>一ゴロ</p>
                         </li>
                     </ul> -->
-                    <div id="order">打順 :
-                        <%- batterInfo[0].orderNo %>
+                        <div id="order">打順 :
+                            <%- responseBody.batterInfo[0].orderNo %>
+                        </div>
+                        <div id="name">
+                            <%- responseBody.batterInfo[0].playerName %>
+                        </div>
+                        <div id="box_count">第
+                            <%- responseBody.batterInfo[0].boxNum %>
+                                打席
+                        </div>
+
+                        <form action="/scorebook?_method=PUT" method="post">
+                            <!-- <input type="hidden" name="_method" value="PUT"> -->
+                            <input class="border border-dark rounded" id="result" name="result" onchange="changeFlg()"
+                                value="<%- responseBody.batterInfo[0].boxResult %>" maxlength="3"></input>
+                            <input id="orderNum" type="hidden" name="orderNum" value=<%-
+                                responseBody.batterInfo[0].orderNo %>>
+                            <input id="boxNum" type="hidden" name="boxNum" value=<%- responseBody.batterInfo[0].boxNum
+                                %>>
+                            <input id="changeFlag" type="hidden" name="changeFlag" value=0>
+                            <input id="resultEnterBtn" class="btn btn-success btn-lg" type="submit" value="決定">
+                        </form>
+
+                        <a href="/back" id="back" class="btn btn-warning">戻る</a>
+
                     </div>
-                    <div id="name">
-                        <%- batterInfo[0].playerName %>
-                    </div>
-                    <div id="box_count">第
-                        <%- batterInfo[0].boxNum %>
-                            打席
-                    </div>
-                    <form action="/scorebook?_method=PUT" method="post">
-                        <!-- <input type="hidden" name="_method" value="PUT"> -->
-                        <input class="border border-dark rounded" id="result" name="result" onchange="changeFlg()"
-                            value="<%- batterInfo[0].boxResult %>" maxlength="3"></input>
-                        <input id="orderNum" type="hidden" name="orderNum" value=<%- batterInfo[0].orderNo %>>
-                        <input id="boxNum" type="hidden" name="boxNum" value=<%- batterInfo[0].boxNum %>>
-                        <input id="changeFlag" type="hidden" name="changeFlag" value=0>
-                        <input id="resultEnterBtn" class="btn btn-warning btn-lg" type="submit" value="入力">
-                    </form>
-                    <a href="/back" id="back" class="btn btn-primary">戻る</a>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS  -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <!-- <script src="/javascripts/basic2.js"></script> -->
-    <script src="/javascripts/submit.js"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS  -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+        <!-- <script src="/javascripts/basic2.js"></script> -->
+        <script src="/javascripts/submit.js"></script>
 </body>
 
 </html>

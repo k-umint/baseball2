@@ -20,7 +20,8 @@
                                             <% }); %>
                                                 <% boxArrMod.push(""); %>
                                                     <% boxArrMod.forEach((element,index)=> { %>
-                                                        <li class="list-group-item">
+                                                        <%- console.log("index : "+index) %> 
+                                                        <li class=" list-group-item">
                                                             <p>第<%- index+1 %>打席</p>
                                                             <div id="box_<%- player.order %>-<%- index+1 %>"
                                                                 class="hitting_result">
@@ -31,8 +32,8 @@
                                                                     <%- element %>
                                                                 </a>
                                                             </div>
-                                                        </li>
-                                                        <% }); %>
+                                                            </li>
+                                                            <% }); %>
                 </ul>
             </div>
         </div>

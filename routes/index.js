@@ -22,6 +22,12 @@ var passport = require('passport');
 //   console.log('Connected');
 // });
 
+// let db_config = {
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'root',
+//   database: 'baseball_score'
+// }
 let db_config = {
   host: 'us-cdbr-east-04.cleardb.com',
   user: 'b20f0b5811dcf3',
@@ -38,7 +44,8 @@ function handleDisconnect() {
   connection.connect(function (err) {
     if (err) {
       console.log('ERROR.CONNECTION_DB: ', err);
-      setTimeout(handleDisconnect, 1000);
+      // setTimeout(handleDisconnect, 1000);
+      setTimeout(handleDisconnect, 180 * 60 * 8 * 1000);
     }
   });
 
@@ -93,7 +100,6 @@ let now = formatDate(date, 'yyyy-MM-dd');
 let globalResBody;
 let globalGameId;
 
-
 //ログイン認証
 let isLogined = function (req, res, next) {
   console.log(JSON.stringify(req.session, null, 2));
@@ -103,6 +109,7 @@ let isLogined = function (req, res, next) {
     res.redirect("/login");
   }
 };
+
 
 /* 
 Method : GET
@@ -118,7 +125,13 @@ router.get('/', isLogined, function (req, res, next) {
   debugLogger.debug('=============================');
 
   let err = '';
-  res.render('index', { error: err });
+
+  let userId = req.session.passport.user;
+
+  res.render('index', {
+    error: err,
+    userId: userId
+  });
 });
 
 
@@ -138,13 +151,17 @@ router.get('/games_history', isLogined, function (req, res, next) {
   //sessionのクリア
   // req.session.destroy();
 
+  let userId = req.session.passport.user;
+  console.log("userid : " + userId);
+
   let gamesObject = {};
   let gamesList = [];
   let playersObject = {};
   let playerList = [];
 
   let SelectAllPlayersAndGameInnerJoin =
-    `SELECT * FROM players JOIN game ON players.game_id = game.id ORDER BY game.date`;
+    // `SELECT * FROM players JOIN game ON players.game_id = game.id ORDER BY game.date`;
+    `SELECT * FROM players JOIN game ON players.game_id = game.id WHERE game.user_id = "${userId}" ORDER BY game.date`;
 
   connection.query(SelectAllPlayersAndGameInnerJoin, function (err, results, fields) {
 
@@ -211,7 +228,10 @@ router.get('/games_history', isLogined, function (req, res, next) {
       gamesList: gamesListMarged
     };
 
-    res.render('game_history', responseBody);
+    res.render('game_history', {
+      responseBody: responseBody,
+      userId: userId
+    });
 
   });
 });
@@ -233,6 +253,7 @@ router.get('/scorebook/:gameId', isLogined, function (req, res, next) {
   let resBody = [];
   let battingOrder;
   let gameId = req.params.gameId;
+  let userId = req.session.passport.user;
 
   req.session.gameInfo = { gameId: gameId };
 
@@ -272,7 +293,10 @@ router.get('/scorebook/:gameId', isLogined, function (req, res, next) {
       playersList: resBody
     }
 
-    res.render('scorebook', responseBody);
+    res.render('scorebook', {
+      responseBody: responseBody,
+      userId: userId
+    });
   });
 });
 
@@ -292,6 +316,7 @@ router.post('/members', isLogined, function (req, res, next) {
 
   let dateItem = req.body.date_hidden;
   let opponentItem = req.body.opponent;
+  let userId = req.session.passport.user;
 
   if (opponentItem) {
     req.session.gameInfo = {
@@ -302,7 +327,7 @@ router.post('/members', isLogined, function (req, res, next) {
     // console.table(req.session);
 
     let insertGameSql =
-      `INSERT INTO game VALUES(0,"${dateItem}","${opponentItem}")`;
+      `INSERT INTO game VALUES(0,"${dateItem}","${opponentItem}","${userId}")`;
 
     connection.query(insertGameSql, function (err, result, fields) {
       if (err) {
@@ -314,14 +339,20 @@ router.post('/members', isLogined, function (req, res, next) {
         // console.log(req.session.gameInfo.gameId);
         // console.table(req.session);
       }
-      res.render('members', req.body);
+      console.log("userId : " + userId);
+      res.render('members', {
+        resBody: req.body,
+        userId: userId
+      });
     });
 
   } else {
     var err = '対戦相手を入力してください。';
-    res.render('index', { error: err });
+    res.render('index', {
+      error: err,
+      userId: userId
+    });
   }
-
 });
 
 
@@ -343,6 +374,7 @@ router.post('/scorebook', isLogined, function (req, res, next) {
   let gameId = req.session.gameInfo.gameId;
   let insertValues = '';
   let battingOrder;
+  let userId = req.session.passport.user;
 
   for (let i = 1; i < 10; i++) {
     let position = req.body[`position-${i}`];
@@ -384,7 +416,10 @@ router.post('/scorebook', isLogined, function (req, res, next) {
       playersList: resBody
     }
 
-    res.render('scorebook', responseBody);
+    res.render('scorebook', {
+      responseBody: responseBody,
+      userId: userId
+    });
   });
   // });
 });
@@ -407,14 +442,21 @@ router.post('/batterBox', isLogined, function (req, res, next) {
   //クエリパラメータ解析
   let boxId = req.query.boxId;
   let numArr = boxId.split('-');
-  let boxNum = numArr[1];
+  let boxNum;
+
+  if (boxId.slice(0, 1) == "-") {
+    boxNum = numArr[2];
+  } else {
+    boxNum = numArr[1];
+  }
 
   //リクエストボディ解析
   let orderNo = req.body.orderNum;
   let playerName = req.body.playerName;
 
-  //sessionからgameIdを取得
+  //session解析
   let gameId = req.session.gameInfo.gameId;
+  let userId = req.session.passport.user;
 
   let getBoxResultSql =
     `SELECT box_${boxNum} 
@@ -439,7 +481,10 @@ router.post('/batterBox', isLogined, function (req, res, next) {
         }
       ]
     }
-    res.render('batterBox', responseBody);
+    res.render('batterBox', {
+      responseBody: responseBody,
+      userId: userId
+    });
 
   });
 });
@@ -461,8 +506,9 @@ router.get('/player', isLogined, function (req, res, next) {
   debugLogger.debug('session : ' + JSON.stringify(req.session, null, 2));
   debugLogger.debug('=============================');
 
-  //sessionからgameIdを取得
+  //session解析
   let gameId = req.session.gameInfo.gameId;
+  let userId = req.session.passport.user;
 
   let getPlayerInfoSql =
     `SELECT position FROM players WHERE batting_order = ${orderNum} AND name = "${playerName}" AND game_id = ${gameId}`;
@@ -483,7 +529,10 @@ router.get('/player', isLogined, function (req, res, next) {
         }
       ]
     }
-    res.render('player', responseBody);
+    res.render('player', {
+      responseBody: responseBody,
+      userId: userId
+    });
 
   });
 });
@@ -517,11 +566,15 @@ router.put('/scorebook', isLogined, function (req, res, next) {
   //打席結果が未変更の場合
   if (!changeFlag) {
 
-    resBody[orderNo - 1][`box_${boxNo}`] = boxResult;
+    // if (boxNo<0) {
 
-    let responseBody = {
-      playersList: resBody
-    };
+    // }
+
+    //     resBody[orderNo - 1][`box_${boxNo}`] = boxResult;
+
+    //     let responseBody = {
+    //       playersList: resBody
+    //     };
 
     // res.render('scorebook', responseBody);
     res.redirect(`scorebook/${gameId}`);
@@ -573,8 +626,10 @@ router.post('/change', isLogined, function (req, res, next) {
   let changePositionFlag = req.body.changePositionFlag;
   // let resBody = globalResBody.slice();
   let resBody = [];
-  let gameId = req.session.gameInfo.gameId;
 
+  //session解析
+  let gameId = req.session.gameInfo.gameId;
+  let userId = req.session.passport.user;
 
   //選手交代の場合
   if (changeNameFlag == 1) {
@@ -618,7 +673,10 @@ router.post('/change', isLogined, function (req, res, next) {
           let responseBody = {
             playersList: resBody
           }
-          res.render('scorebook', responseBody);
+          res.render('scorebook', {
+            responseBody: responseBody,
+            userId: userId
+          });
         });
       });
     });
@@ -656,7 +714,10 @@ router.post('/change', isLogined, function (req, res, next) {
         let responseBody = {
           playersList: resBody
         }
-        res.render('scorebook', responseBody);
+        res.render('scorebook', {
+          responseBody: responseBody,
+          userId: userId
+        });
       });
     });
 
@@ -664,7 +725,10 @@ router.post('/change', isLogined, function (req, res, next) {
     let responseBody = {
       playersList: resBody
     }
-    res.render('scorebook', responseBody);
+    res.render('scorebook', {
+      responseBody: responseBody,
+      userId: userId
+    });
   }
 
 });

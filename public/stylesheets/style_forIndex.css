@@ -1,14 +1,26 @@
-html body div.container div#green-field {
-  width: 600px;
+html body {
+  background-color: #f4f5f7;
 }
 
-html body div.container div#green-field div#brown-field {
+html body div#main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+html body div#main div#green-field {
+  width: 600px;
+  padding-top: 60px;
+  margin: 0 auto;
+}
+
+html body div#main div#green-field div#brown-field {
   height: 700px;
   background-color: #8b4513;
   border-width: 5px !important;
 }
 
-html body div.container div#green-field div#brown-field #title {
+html body div#main div#green-field div#brown-field #title {
   position: absolute;
   text-align: center;
   color: #fff;
@@ -22,7 +34,7 @@ html body div.container div#green-field div#brown-field #title {
   font-weight: bold;
 }
 
-html body div.container div#green-field div#brown-field #date {
+html body div#main div#green-field div#brown-field #date {
   position: absolute;
   text-align: center;
   color: #fff;
@@ -35,7 +47,7 @@ html body div.container div#green-field div#brown-field #date {
   font-size: 40px;
 }
 
-html body div.container div#green-field div#brown-field #vs {
+html body div#main div#green-field div#brown-field #vs {
   position: absolute;
   text-align: center;
   color: #fff;
@@ -48,7 +60,7 @@ html body div.container div#green-field div#brown-field #vs {
   font-size: 30px;
 }
 
-html body div.container div#green-field div#brown-field #opponent {
+html body div#main div#green-field div#brown-field #opponent {
   position: absolute;
   text-align: center;
   width: 60%;
@@ -61,7 +73,7 @@ html body div.container div#green-field div#brown-field #opponent {
   background-color: #fff;
 }
 
-html body div.container div#green-field div#brown-field h3 {
+html body div#main div#green-field div#brown-field h3 {
   position: absolute;
   top: 360px;
   left: 50%;
@@ -71,7 +83,7 @@ html body div.container div#green-field div#brown-field h3 {
   color: yellow;
 }
 
-html body div.container div#green-field div#brown-field #gameStartBtn {
+html body div#main div#green-field div#brown-field #gameStartBtn {
   position: absolute;
   width: 200px;
   top: 400px;
@@ -80,9 +92,9 @@ html body div.container div#green-field div#brown-field #gameStartBtn {
           transform: translateY(0) translateX(-50%);
 }
 
-html body div.container div#green-field div#brown-field #historyGameBtn {
+html body div#main div#green-field div#brown-field #historyGameBtn {
   position: absolute;
-  top: 600px;
+  top: 500px;
   left: 50%;
   -webkit-transform: translateY(0) translateX(-50%);
           transform: translateY(0) translateX(-50%);

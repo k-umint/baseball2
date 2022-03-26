@@ -2,7 +2,8 @@ html {
     body {
         div.container {
             div#green-field {
-                // height: 500px;
+                height: 100%;
+                padding-top: 60px;
                 // width: 600px;
                 div#brown-field {
                     // height: 80%;
@@ -16,6 +17,7 @@ html {
                         text-decoration: underline;
                         color: aliceblue;
                         float: left;
+                        margin: 20px 0 10px;
                     }
                     table {
                         tbody {

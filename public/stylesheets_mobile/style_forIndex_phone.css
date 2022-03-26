@@ -26,11 +26,6 @@ html body div#main div#green-field div#brown-field {
   padding: 0;
 }
 
-html body div#main div#green-field div#brown-field a#logoutBtn {
-  float: right;
-  margin-top: 10px;
-}
-
 html body div#main div#green-field div#brown-field #title {
   position: absolute;
   text-align: center;

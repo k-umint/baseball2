@@ -126,7 +126,7 @@ for (let i = 1; i < 10; i++) {
     //         break;
     // }
 
-    inputElement.value = playerName;
+    // inputElement.value = playerName;
     // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑動作確認用↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
 
@@ -137,4 +137,3 @@ for (let i = 1; i < 10; i++) {
     tbody.appendChild(trElement);
 
 }
-

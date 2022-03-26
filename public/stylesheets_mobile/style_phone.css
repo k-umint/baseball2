@@ -1,3 +1,8 @@
+html body div.container div#green-field {
+  height: 100%;
+  padding-top: 60px;
+}
+
 html body div.container div#green-field div#brown-field {
   background-color: #8b4513;
   border-width: 5px !important;
@@ -12,6 +17,7 @@ html body div.container div#green-field div#brown-field h2 {
   text-decoration: underline;
   color: aliceblue;
   float: left;
+  margin: 20px 0 10px;
 }
 
 html body div.container div#green-field div#brown-field table tbody tr.tablebody-tr td.batter_num {

@@ -1,5 +1,17 @@
+@media screen and (max-width: 480px) {
+  html {
+    height: 100%;
+  }
+}
+
 html body {
   background-color: #f4f5f7;
+}
+
+@media screen and (max-width: 480px) {
+  html body {
+    height: 100%;
+  }
 }
 
 html body div#main {
@@ -8,53 +20,132 @@ html body div#main {
   width: 100%;
 }
 
+@media screen and (max-width: 480px) {
+  html body div#main {
+    height: 100%;
+  }
+}
+
 html body div#main div#green-field {
-  width: 600px;
   padding-top: 60px;
   margin: 0 auto;
 }
 
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field {
+    height: 100%;
+  }
+}
+
 html body div#main div#green-field div#brown-field {
-  height: 700px;
   background-color: #8b4513;
   border-width: 5px !important;
 }
 
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field {
+    height: 700px;
+  }
+  html body div#main div#green-field div#brown-field #goHomeBtn {
+    position: absolute;
+    top: 620px;
+    left: 50%;
+    -webkit-transform: translateY(0) translateX(-50%);
+            transform: translateY(0) translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field {
+    height: 94%;
+    padding: 0 10px;
+  }
+  html body div#main div#green-field div#brown-field #goHomeBtn {
+    position: absolute;
+    width: 100px;
+    top: 15px;
+    left: 80%;
+    -webkit-transform: translateY(0) translateX(-50%);
+            transform: translateY(0) translateX(-50%);
+  }
+}
+
 html body div#main div#green-field div#brown-field .list-group #scroll-container {
-  height: 550px;
-  margin-top: 30px;
   overflow: auto;
 }
 
-html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item {
-  overflow: hidden;
-  margin-bottom: 10px;
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field .list-group #scroll-container {
+    height: 550px;
+    margin-top: 30px;
+  }
+  html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item {
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p {
+    margin: 0;
+  }
+  html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-date {
+    display: inline-block;
+    font-size: 20px;
+    width: 30%;
+  }
+  html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-vs {
+    display: inline-block;
+  }
+  html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-opponent {
+    display: inline-block;
+    font-size: 30px;
+  }
 }
 
-html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p {
-  margin: 0;
-}
-
-html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-date {
-  display: inline-block;
-  font-size: 20px;
-  width: 30%;
-}
-
-html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-vs {
-  display: inline-block;
-}
-
-html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-opponent {
-  display: inline-block;
-  font-size: 30px;
-}
-
-html body div#main div#green-field div#brown-field #goHomeBtn {
-  position: absolute;
-  top: 620px;
-  left: 50%;
-  -webkit-transform: translateY(0) translateX(-50%);
-          transform: translateY(0) translateX(-50%);
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field .list-group #scroll-container {
+    height: 370px;
+    margin-top: 70px;
+  }
+  html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item {
+    overflow: hidden;
+    padding: 10px 0;
+    margin-bottom: 3px;
+    height: 60px;
+    position: relative;
+    display: inline-block;
+  }
+  html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p {
+    position: absolute;
+    margin: 0;
+  }
+  html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-date {
+    display: inline-block;
+    font-size: 15px;
+    width: 20%;
+    top: 50%;
+    left: 5%;
+    -webkit-transform: translateY(-50%) translateX(0);
+            transform: translateY(-50%) translateX(0);
+  }
+  html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-vs {
+    display: inline-block;
+    top: 60%;
+    left: 30%;
+    -webkit-transform: translateY(-50%) translateX(0);
+            transform: translateY(-50%) translateX(0);
+  }
+  html body div#main div#green-field div#brown-field .list-group #scroll-container a.scroll-item p.p-opponent {
+    display: inline-block;
+    font-size: 25px;
+    top: 55%;
+    left: 40%;
+    -webkit-transform: translateY(-50%) translateX(0);
+            transform: translateY(-50%) translateX(0);
+  }
 }
 /*# sourceMappingURL=style_forgames.css.map */

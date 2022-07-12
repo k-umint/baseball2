@@ -20,9 +20,20 @@ header div#header_container {
 
 header div#header_container div#userId_info {
   position: absolute;
-  top: 15px;
-  left: 20px;
-  height: 50%;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container div#userId_info {
+    top: 15px;
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container div#userId_info {
+    top: 20px;
+    left: 10px;
+  }
 }
 
 header div#header_container div#userId_info p {
@@ -31,10 +42,27 @@ header div#header_container div#userId_info p {
   color: aliceblue;
 }
 
+@media screen and (max-width: 480px) {
+  header div#header_container div#userId_info p {
+    font-size: medium;
+  }
+}
+
 header div#header_container a#logoutBtn {
   position: absolute;
   text-align: center;
   top: 10px;
-  left: 80%;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container a#logoutBtn {
+    left: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container a#logoutBtn {
+    left: 43%;
+  }
 }
 /*# sourceMappingURL=header.css.map */

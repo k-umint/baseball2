@@ -8,10 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/style.css" media="screen and (min-width:481px)">
-    <link rel="stylesheet" href="/stylesheets_mobile/style_phone.css" media="screen and (max-width:480px)">
-    <link rel="stylesheet" href="/stylesheets/header.css" media="screen and (min-width:481px)">
-    <link rel="stylesheet" href="/stylesheets_mobile/header_phone.css" media="screen and (max-width:480px)">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
 
     <!-- <link rel="apple-touch-icon" href="/images/favicon.ico">
     <link rel="icon" href="/images/favicon2.ico"> -->
@@ -25,29 +23,29 @@
     <%- include("components/header"); %>
 
         <div id="main">
-            <div class="container">
-                <!-- <div id="green-field" class="row  justify-content-center align-self-center bg-success"> -->
-                <div id="green-field" class="row bg-success">
-                    <div id="brown-field" class="col border border-white m-4">
-                        <h2>Starting Member</h2>
-                        <form method="post" action="/scorebook">
-                            <table class="table table-light">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">打順</th>
-                                        <th scope="col">守備</th>
-                                        <th scope="col">氏名</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                            <input type="submit" class="btn btn-warning" value="登録"></input>
-                        </form>
-                    </div>
+            <!-- <div class="container"> -->
+            <!-- <div id="green-field" class="row  justify-content-center align-self-center bg-success"> -->
+            <div id="green-field" class="row bg-success">
+                <div id="brown-field" class="col border border-white m-4">
+                    <h2>Starting Member</h2>
+                    <form method="post" action="/scorebook">
+                        <table class="table table-light">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">打順</th>
+                                    <th scope="col">守備</th>
+                                    <th scope="col">氏名</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <input type="submit" class="btn btn-warning" value="登録"></input>
+                    </form>
                 </div>
             </div>
         </div>
+        <!-- </div> -->
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS  -->

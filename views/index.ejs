@@ -36,9 +36,11 @@
             <div id="green-field" class="row bg-success">
                 <div id="brown-field" class="col border border-white m-3">
                     <div id="title">Baseball Score</div>
-                    <div id="date"></div>
                     <form method="post" action="/members">
                         <input type="hidden" id="date_hidden" name="date_hidden"></input>
+                        <label id="date_label">
+                            <input type="date" id="date_input" name="date_input"></input>
+                        </label>
                         <div id="vs">VS</div>
                         <input type="text" id="opponent" class="border border-dark rounded" name="opponent"></input>
                         <% if(error) {%>

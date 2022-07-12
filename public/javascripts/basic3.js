@@ -1,10 +1,10 @@
-let dateElem = document.getElementById('date');
 let dateHiddenElem = document.getElementById('date_hidden');
+let dateInputElem = document.getElementById('date_input');
 
 let date = new Date(Date.now());
 
-dateElem.innerText = formatDate(date, 'yyyy/MM/dd');
 dateHiddenElem.setAttribute('value', formatDate(date, 'yyyy-MM-dd'));
+dateInputElem.setAttribute('value', formatDate(date, 'yyyy-MM-dd'));
 
 function formatDate(date, format) {
     format = format.replace(/yyyy/g, date.getFullYear());
@@ -16,13 +16,3 @@ function formatDate(date, format) {
     format = format.replace(/SSS/g, ('00' + date.getMilliseconds()).slice(-3));
     return format;
 };
-
-
-
-
-
-
-
-
-
-

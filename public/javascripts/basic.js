@@ -10,7 +10,6 @@ for (let i = 1; i < 10; i++) {
     thElement.textContent = i;
     trElement.appendChild(thElement);
 
-
     //=========================================================================
 
     let tdElement_1 = document.createElement('td');
@@ -128,8 +127,6 @@ for (let i = 1; i < 10; i++) {
 
     // inputElement.value = playerName;
     // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑動作確認用↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-
-
 
     tdElement_3.appendChild(inputElement);
     trElement.appendChild(tdElement_3);

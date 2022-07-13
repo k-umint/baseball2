@@ -27,8 +27,10 @@ html body div#main {
 }
 
 html body div#main div#green-field {
+  position: relative;
   padding-top: 60px;
   margin: 0 auto;
+  background-color: #99cc33;
 }
 
 @media screen and (min-width: 481px) {
@@ -44,7 +46,7 @@ html body div#main div#green-field {
 }
 
 html body div#main div#green-field div#brown-field {
-  background-color: #8b4513;
+  background-color: #cc6633;
   border-width: 5px !important;
 }
 
@@ -75,14 +77,14 @@ html body div#main div#green-field div#brown-field #title {
 
 @media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field #title {
-    top: 100px;
+    top: 150px;
     font-size: 50px;
   }
 }
 
 @media screen and (max-width: 480px) {
   html body div#main div#green-field div#brown-field #title {
-    top: 30px;
+    top: 100px;
     font-size: 40px;
   }
 }
@@ -99,7 +101,7 @@ html body div#main div#green-field div#brown-field #date_label {
     width: 300px;
     height: 60px;
     top: 220px;
-    left: 25%;
+    left: 28%;
   }
 }
 
@@ -107,13 +109,13 @@ html body div#main div#green-field div#brown-field #date_label {
   html body div#main div#green-field div#brown-field #date_label {
     width: 200px;
     height: 45px;
-    top: 130px;
+    top: 120px;
     left: 25%;
   }
 }
 
 html body div#main div#green-field div#brown-field #date_input {
-  position: relative;
+  position: absolute;
   padding: 0 10px;
   border: 0;
   background: transparent;
@@ -142,50 +144,55 @@ html body div#main div#green-field div#brown-field #vs {
   position: absolute;
   text-align: center;
   color: #fff;
-  width: 40%;
   height: auto;
+  font-weight: bold;
   -webkit-transform: translateY(0) translateX(-50%);
           transform: translateY(0) translateX(-50%);
-  font-size: 30px;
 }
 
 @media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field #vs {
-    top: 315px;
-    left: 15%;
+    top: 390px;
+    left: 10%;
+    width: 50px;
+    font-size: 50px;
   }
 }
 
 @media screen and (max-width: 480px) {
   html body div#main div#green-field div#brown-field #vs {
-    top: 200px;
+    top: 270px;
     left: 17%;
+    width: 40%;
+    font-size: 30px;
   }
 }
 
 html body div#main div#green-field div#brown-field #opponent {
-  position: absolute;
+  position: relative;
   text-align: center;
-  width: 60%;
   height: auto;
   -webkit-transform: translateY(0) translateX(-50%);
           transform: translateY(0) translateX(-50%);
   background-color: #fff;
+  text-align: left;
 }
 
 @media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field #opponent {
-    top: 290px;
-    left: 50%;
+    top: 235px;
+    left: 55%;
     font-size: 40px;
+    width: 80%;
   }
 }
 
 @media screen and (max-width: 480px) {
   html body div#main div#green-field div#brown-field #opponent {
-    top: 180px;
+    top: 120px;
     left: 55%;
     font-size: 30px;
+    width: 70%;
   }
 }
 
@@ -199,14 +206,14 @@ html body div#main div#green-field div#brown-field h3 {
 
 @media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field h3 {
-    top: 360px;
+    top: 430px;
     left: 50%;
   }
 }
 
 @media screen and (max-width: 480px) {
   html body div#main div#green-field div#brown-field h3 {
-    top: 255px;
+    top: 325px;
     left: 52%;
     font-size: 20px;
   }
@@ -218,17 +225,20 @@ html body div#main div#green-field div#brown-field #gameStartBtn {
   left: 50%;
   -webkit-transform: translateY(0) translateX(-50%);
           transform: translateY(0) translateX(-50%);
+  font-weight: bold;
+  font-size: large;
+  background-color: #33cc66;
 }
 
 @media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field #gameStartBtn {
-    top: 400px;
+    top: 500px;
   }
 }
 
 @media screen and (max-width: 480px) {
   html body div#main div#green-field div#brown-field #gameStartBtn {
-    top: 300px;
+    top: 370px;
   }
 }
 
@@ -241,13 +251,13 @@ html body div#main div#green-field div#brown-field #historyGameBtn {
 
 @media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field #historyGameBtn {
-    top: 500px;
+    top: 600px;
   }
 }
 
 @media screen and (max-width: 480px) {
   html body div#main div#green-field div#brown-field #historyGameBtn {
-    top: 380px;
+    top: 450px;
   }
 }
 /*# sourceMappingURL=style_forIndex.css.map */

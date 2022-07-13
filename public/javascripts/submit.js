@@ -123,14 +123,13 @@ async function aaa(jsonObject) {
 
     console.log(jsonObject)
 
-    fetch('/members',
-        {
+    fetch('/members', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(jsonObject)
-            // body: JSON.stringify({ "test": "test" })
+                // body: JSON.stringify({ "test": "test" })
         })
         .then((res) => (res.json()))
         .then((body) => {
@@ -214,26 +213,19 @@ function getBoxResult(event) {
 
 //打席結果の変更があった場合にフラグを1にする
 function changeFlg() {
-
     console.log("changeFlag");
     let changeFlag = document.getElementById('changeFlag');
     changeFlag.value = 1;
-
 };
 
 function changeNameFlg() {
     console.log("changeNameFlag");
-
     let changeFlag = document.getElementById('changeNameFlag');
-    changeFlag.value = 1;
-
+    changeFlag.value = true;
 };
 
 function changePositionFlg() {
     console.log("changePositionFlag");
-
     let changeFlag = document.getElementById('changePositionFlag');
-    changeFlag.value = 1;
-
+    changeFlag.value = true;
 };
-

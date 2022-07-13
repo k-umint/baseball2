@@ -8,26 +8,12 @@ const session = require('express-session');
 const fs = require('fs');
 var passport = require('passport');
 
-// Infomations of database
-// const connection = mysql.createConnection({
-//   host: 'us-cdbr-east-04.cleardb.com',
-//   user: 'b20f0b5811dcf3',
-//   password: '2e170047',
-//   database: 'heroku_8f451d7112f306c'
-// });
-
-//Connection to Database
-// connection.connect(function (err) {
-//   if (err) throw err;
-//   console.log('Connected');
-// });
-
 // let db_config = {
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'root',
-//     database: 'baseball_score'
-// }
+//         host: 'localhost',
+//         user: 'root',
+//         password: 'root',
+//         database: 'baseball_score'
+//     }
 let db_config = {
     host: 'us-cdbr-east-04.cleardb.com',
     user: 'b20f0b5811dcf3',
@@ -103,7 +89,7 @@ let globalGameId;
 
 //ログイン認証
 let isLogined = function(req, res, next) {
-    console.log(JSON.stringify(req.session, null, 2));
+    // console.log(JSON.stringify(req.session, null, 2));
     if (req.isAuthenticated()) {
         return next();
     } else {
@@ -126,7 +112,6 @@ router.get('/', isLogined, function(req, res, next) {
     debugLogger.debug('=============================');
 
     let err = '';
-
     let userId = req.session.passport.user;
 
     res.render('index', {
@@ -149,87 +134,27 @@ router.get('/games_history', isLogined, function(req, res, next) {
     debugLogger.debug('session : ' + JSON.stringify(req.session, null, 2));
     debugLogger.debug('=============================');
 
-    //sessionのクリア
-    // req.session.destroy();
+    //globalResBodyのクリア
+    globalResBody = [];
 
     let userId = req.session.passport.user;
-    console.log("userid : " + userId);
 
-    let gamesObject = {};
-    let gamesList = [];
-    let playersObject = {};
-    let playerList = [];
+    let selectAllGames = `SELECT * FROM game ORDER BY game.date`
 
-    let SelectAllPlayersAndGameInnerJoin =
-        // `SELECT * FROM players JOIN game ON players.game_id = game.id ORDER BY game.date`;
-        `SELECT * FROM players JOIN game ON players.game_id = game.id WHERE game.user_id = "${userId}" ORDER BY game.date`;
-
-    connection.query(SelectAllPlayersAndGameInnerJoin, function(err, results, fields) {
-
+    connection.query(selectAllGames, function(err, results, fields) {
         if (err) { throw err };
 
-        for (const result of results) {
-
-            //========================Gameのオブジェクト作成========================
-            let dateAAA = new Date(result['date']);
-            let datetime = formatDate(dateAAA, 'yyyy-MM-dd');
-
-            gamesObject = {
-                gameId: result['game_id'],
-                date: datetime,
-                opponent: result['opponent']
-            };
-
-            gamesList.push(gamesObject);
-            //======================================================================
-
-            //========================Playerのオブジェクト作成========================
-
-            playersObject = {
-                batting_order: result['batting_order'],
-                name: result['name'],
-                box_1: result['box_1'],
-                box_2: result['box_2'],
-                box_3: result['box_3'],
-                box_4: result['box_4'],
-                box_5: result['box_5'],
-                box_6: result['box_6'],
-                box_7: result['box_7'],
-                box_8: result['box_8'],
-                box_9: result['box_9'],
-                box_10: result['box_10'],
-                gameId: result['game_id']
-            }
-
-            playerList.push(playersObject);
-            //======================================================================
+        for (let i = 0; i < results.length; i++) {
+            // dateのフォーマット変更
+            let originalDate = new Date(results[i]['date']);
+            results[i]['date'] = formatDate(originalDate, 'yyyy-MM-dd');
         }
 
-        // 重複を取り除く処理
-        let gamesListMarged = gamesList.filter((element, index, self) =>
-            self.findIndex(e =>
-                e.gameId === element.gameId &&
-                e.date === element.date &&
-                e.opponent === element.opponent
-            ) === index
-        );
-
-        //GameとPlayerをガッチャンコ
-        gamesListMarged.forEach((object1, index1) => {
-            let playerResultList = [];
-            playerList.forEach((object2, index2) => {
-                if (object2.gameId == object1.gameId) {
-                    playerResultList.push(object2);
-                    gamesListMarged[index1].playerResult = playerResultList;
-                }
-            });
-        });
-
         let responseBody = {
-            gamesList: gamesListMarged
+            gamesList: results
         };
 
-        res.render('game_history', {
+        res.render('games_history', {
             responseBody: responseBody,
             userId: userId
         });
@@ -264,8 +189,6 @@ router.get('/scorebook/:gameId', isLogined, function(req, res, next) {
     connection.query(getAllBoxResultSql, function(err, result, fields) {
         if (err) { throw err };
 
-        // console.log(JSON.stringify(result, null, 2));
-
         for (const iterator of result) {
 
             battingOrder = {
@@ -287,8 +210,6 @@ router.get('/scorebook/:gameId', isLogined, function(req, res, next) {
         if (!globalResBody) {
             globalResBody = resBody;
         }
-
-        console.table(globalResBody);
 
         let responseBody = {
             playersList: resBody
@@ -324,8 +245,6 @@ router.post('/members', isLogined, function(req, res, next) {
             date: dateItem,
             opponent: opponentItem
         };
-        // console.table(req.body);
-        // console.table(req.session);
 
         let insertGameSql =
             `INSERT INTO game VALUES(0,"${dateItem}","${opponentItem}","${userId}")`;
@@ -336,11 +255,8 @@ router.post('/members', isLogined, function(req, res, next) {
             } else {
                 console.log("Insert completed.");
                 req.session.gameInfo.gameId = result.insertId;
-                // console.table(result);
-                // console.log(req.session.gameInfo.gameId);
-                // console.table(req.session);
             }
-            console.log("userId : " + userId);
+
             res.render('members', {
                 resBody: req.body,
                 userId: userId
@@ -400,18 +316,11 @@ router.post('/scorebook', isLogined, function(req, res, next) {
         resBody.push(battingOrder);
     }
 
-    //global変数への格納(resBody)
-    globalResBody = resBody;
-
     let insertFullSentence = 'INSERT INTO players VALUES' + insertValues;
 
     //データベースへの登録
     connection.query(insertFullSentence, function(err, result, fields) {
-        if (err) {
-            throw err;
-        } else {
-            console.log("Insert completed.")
-        }
+        if (err) { throw err; } else { console.log("Insert completed.") };
 
         let responseBody = {
             playersList: resBody
@@ -495,15 +404,15 @@ Description :
 */
 router.get('/player', isLogined, function(req, res, next) {
 
-    //クエリパラメータ解析
-    let orderNum = req.query.order;
-    let playerName = req.query.name;
-
     debugLogger.debug('=============================');
     debugLogger.debug('Method : GET');
     debugLogger.debug(`URL : /player&order=${orderNum}&name=${playerName}`);
     debugLogger.debug('session : ' + JSON.stringify(req.session, null, 2));
     debugLogger.debug('=============================');
+
+    //クエリパラメータ解析
+    let orderNum = req.query.order;
+    let playerName = req.query.name;
 
     //session解析
     let gameId = req.session.gameInfo.gameId;
@@ -514,10 +423,7 @@ router.get('/player', isLogined, function(req, res, next) {
 
     connection.query(getPlayerInfoSql, function(err, result, fields) {
 
-        if (err) {
-            console.log("err" + err);
-            throw err
-        };
+        if (err) { console.log("err" + err); throw err };
 
         let responseBody = {
             playerInfo: [{
@@ -547,37 +453,25 @@ router.put('/scorebook', isLogined, function(req, res, next) {
     debugLogger.debug('URL : /scorebook');
     debugLogger.debug('session : ' + JSON.stringify(req.session.gameInfo, null, 2));
     debugLogger.debug('Query Param : ' + JSON.stringify(req.params, null, 2));
+    debugLogger.debug('=============================');
 
-
+    //リクエストボディ解析
     let boxResult = req.body.result;
     let orderNo = req.body.orderNum;
     let boxNo = req.body.boxNum;
     let changeFlag = parseInt(req.body.changeFlag);
     let resBody = globalResBody.slice();
+
+    //session解析
     let gameId = req.session.gameInfo.gameId;
 
-    debugLogger.debug('changeFlag : ' + changeFlag);
-    debugLogger.debug('boxResult : ' + boxResult);
-    debugLogger.debug('=============================');
-
-    //打席結果が未変更の場合
     if (!changeFlag) {
+        //打席結果が未変更の場合
 
-        // if (boxNo<0) {
-
-        // }
-
-        //     resBody[orderNo - 1][`box_${boxNo}`] = boxResult;
-
-        //     let responseBody = {
-        //       playersList: resBody
-        //     };
-
-        // res.render('scorebook', responseBody);
         res.redirect(`scorebook/${gameId}`);
 
-        //打席結果が変更された場合
     } else {
+        //打席結果が変更された場合
 
         //打席結果の登録
         let updateValues =
@@ -593,9 +487,6 @@ router.put('/scorebook', isLogined, function(req, res, next) {
                 playersList: resBody
             }
 
-            console.log(JSON.stringify(resBody, null, 2));
-
-            // res.render('scorebook', responseBody, err);
             res.redirect(`scorebook/${gameId}`);
         });
     }
@@ -621,15 +512,14 @@ router.post('/change', isLogined, function(req, res, next) {
     let reqOrder = req.body.order;
     let changeNameFlag = req.body.changeNameFlag;
     let changePositionFlag = req.body.changePositionFlag;
-    // let resBody = globalResBody.slice();
     let resBody = [];
 
     //session解析
     let gameId = req.session.gameInfo.gameId;
     let userId = req.session.passport.user;
 
-    //選手交代の場合
-    if (changeNameFlag == 1) {
+    if (changeNameFlag) {
+        //選手交代の場合(+ポジション変更も許容)
 
         //まず交代される側の選手の打順を-${打順}にする
         let minusChangedPlayerOrderSql =
@@ -678,8 +568,8 @@ router.post('/change', isLogined, function(req, res, next) {
             });
         });
 
-    } else if (changePositionFlag == 1) {
-        //ポジション変更の場合
+    } else if (!changeNameFlag && changePositionFlag) {
+        //ポジションのみ変更の場合
 
         let updateNewPositionSql =
             `UPDATE players SET position = "${reqPosition}" WHERE game_id = ${gameId} AND batting_order = ${reqOrder}`;
@@ -719,13 +609,9 @@ router.post('/change', isLogined, function(req, res, next) {
         });
 
     } else {
-        let responseBody = {
-            playersList: resBody
-        }
-        res.render('scorebook', {
-            responseBody: responseBody,
-            userId: userId
-        });
+
+        //未変更で"変更"ボタンが押されたとき
+        res.redirect(`scorebook/${gameId}`);
     }
 
 });

@@ -1,4 +1,3 @@
-
 let positionObject = {
     none: '',
     pitcher: '投',

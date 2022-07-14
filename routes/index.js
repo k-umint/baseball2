@@ -406,7 +406,7 @@ router.get('/player', isLogined, function(req, res, next) {
 
     debugLogger.debug('=============================');
     debugLogger.debug('Method : GET');
-    debugLogger.debug(`URL : /player&order=${orderNum}&name=${playerName}`);
+    debugLogger.debug(`URL : /player&order=${req.query.order}&name=${req.query.name}`);
     debugLogger.debug('session : ' + JSON.stringify(req.session, null, 2));
     debugLogger.debug('=============================');
 
@@ -464,6 +464,7 @@ router.put('/scorebook', isLogined, function(req, res, next) {
 
     //session解析
     let gameId = req.session.gameInfo.gameId;
+    let userId = req.session.passport.user;
 
     if (!changeFlag) {
         //打席結果が未変更の場合
@@ -481,13 +482,35 @@ router.put('/scorebook', isLogined, function(req, res, next) {
 
             if (err) { throw err };
 
-            resBody[orderNo - 1][`box_${boxNo}`] = boxResult;
+            let selectAllPlayersSql = `SELECT * FROM players WHERE game_id = ${gameId} ORDER BY batting_order ASC`
 
-            let responseBody = {
-                playersList: resBody
-            }
+            connection.query(selectAllPlayersSql, function(err, result, fields) {
+                if (err) { throw err }
 
-            res.redirect(`scorebook/${gameId}`);
+                for (const iterator of result) {
+                    battingOrder = {
+                        order: iterator.batting_order,
+                        position: iterator.position,
+                        name: iterator.name,
+                        box_1: iterator.box_1,
+                        box_2: iterator.box_2,
+                        box_3: iterator.box_3,
+                        box_4: iterator.box_4,
+                        box_5: iterator.box_5,
+                        box_6: iterator.box_6
+                    };
+                    resBody.push(battingOrder);
+                }
+
+                let responseBody = {
+                    playersList: resBody
+                }
+
+                res.render('scorebook', {
+                    responseBody: responseBody,
+                    userId: userId
+                });
+            });
         });
     }
 });
@@ -513,62 +536,81 @@ router.post('/change', isLogined, function(req, res, next) {
     let changeNameFlag = req.body.changeNameFlag;
     let changePositionFlag = req.body.changePositionFlag;
     let resBody = [];
+    let updateOrderNum;
 
     //session解析
     let gameId = req.session.gameInfo.gameId;
     let userId = req.session.passport.user;
 
-    if (changeNameFlag) {
+    if (changeNameFlag == 1) {
         //選手交代の場合(+ポジション変更も許容)
 
-        //まず交代される側の選手の打順を-${打順}にする
-        let minusChangedPlayerOrderSql =
-            `UPDATE players SET batting_order = -${reqOrder} WHERE game_id = ${gameId} AND batting_order = ${reqOrder}`;
+        //まず打順の最小値を取得
+        let selectMinBattingOrderbyGameIdSql =
+            `SELECT MIN(batting_order) FROM players WHERE game_id = ${gameId}`;
 
-        connection.query(minusChangedPlayerOrderSql, function(err, result, fields) {
+        connection.query(selectMinBattingOrderbyGameIdSql, function(err, result, fields) {
             if (err) { throw err }
 
-            //そして交代後の選手を登録
-            let insertNewPlayerSql =
-                `INSERT INTO players VALUES
-      (${reqOrder},"${reqPosition}","${reqPlayerName}",${gameId},"","","","","","","","","","")`;
+            console.log(JSON.stringify(result, null, 2));
 
-            connection.query(insertNewPlayerSql, function(err, result, fields) {
+            let minBattingOrder = result[0]['MIN(batting_order)'];
+
+            //交代された選手がいない場合：batting_order = -1
+            //交代された選手がいる場合：batting_order = 現在の最小値-1
+            if (minBattingOrder >= 0) {
+                updateOrderNum = -1;
+            } else {
+                updateOrderNum = minBattingOrder - 1;
+            }
+
+            //交代される側の選手の打順を-${打順}にする
+            let minusChangedPlayerOrderSql =
+                `UPDATE players SET batting_order = ${updateOrderNum} WHERE game_id = ${gameId} AND batting_order = ${reqOrder}`;
+
+            connection.query(minusChangedPlayerOrderSql, function(err, result, fields) {
                 if (err) { throw err }
 
-                let selectAllPlayersSql =
-                    `SELECT * FROM players WHERE game_id = ${gameId} ORDER BY batting_order ASC`
+                //そして交代後の選手を登録
+                let insertNewPlayerSql =
+                    `INSERT INTO players VALUES(${reqOrder},"${reqPosition}","${reqPlayerName}",${gameId},"","","","","","","","","","")`;
 
-                connection.query(selectAllPlayersSql, function(err, result, fields) {
+                connection.query(insertNewPlayerSql, function(err, result, fields) {
                     if (err) { throw err }
 
-                    for (const iterator of result) {
-                        battingOrder = {
-                            order: iterator.batting_order,
-                            position: iterator.position,
-                            name: iterator.name,
-                            box_1: iterator.box_1,
-                            box_2: iterator.box_2,
-                            box_3: iterator.box_3,
-                            box_4: iterator.box_4,
-                            box_5: iterator.box_5,
-                            box_6: iterator.box_6
-                        };
-                        resBody.push(battingOrder);
-                    }
+                    let selectAllPlayersSql = `SELECT * FROM players WHERE game_id = ${gameId} ORDER BY batting_order ASC`
 
-                    let responseBody = {
-                        playersList: resBody
-                    }
-                    res.render('scorebook', {
-                        responseBody: responseBody,
-                        userId: userId
+                    connection.query(selectAllPlayersSql, function(err, result, fields) {
+                        if (err) { throw err }
+
+                        for (const iterator of result) {
+                            battingOrder = {
+                                order: iterator.batting_order,
+                                position: iterator.position,
+                                name: iterator.name,
+                                box_1: iterator.box_1,
+                                box_2: iterator.box_2,
+                                box_3: iterator.box_3,
+                                box_4: iterator.box_4,
+                                box_5: iterator.box_5,
+                                box_6: iterator.box_6
+                            };
+                            resBody.push(battingOrder);
+                        }
+
+                        let responseBody = {
+                            playersList: resBody
+                        }
+                        res.render('scorebook', {
+                            responseBody: responseBody,
+                            userId: userId
+                        });
                     });
                 });
             });
         });
 
-    } else if (!changeNameFlag && changePositionFlag) {
+    } else if (changeNameFlag == 0 && changePositionFlag == 1) {
         //ポジションのみ変更の場合
 
         let updateNewPositionSql =

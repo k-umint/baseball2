@@ -19,17 +19,16 @@
                                             <% }); %>
                                                 <% boxArrMod.push(""); %>
                                                     <% boxArrMod.forEach((element,index)=> { %>
-                                                        <%- console.log("index : "+index) %>
-                                                            <li class=" list-group-item">
-                                                                <p>第
-                                                                    <%- index+1 %>打席</p>
-                                                                <div id="box_<%- player.order %>-<%- index+1 %>" class="hitting_result">
-                                                                    <a id="<%- player.order %>-<%- index+1 %>" class="text-center" href="/batterBox?boxId=<%- player.order %>-<%- index+1 %>" onclick="getBoxResult(event)">
-                                                                        <%- element %>
-                                                                    </a>
-                                                                </div>
-                                                            </li>
-                                                            <% }); %>
+                                                        <li class=" list-group-item">
+                                                            <p>第
+                                                                <%- index+1 %>打席</p>
+                                                            <div id="box_<%- player.order %>-<%- index+1 %>" class="hitting_result">
+                                                                <a id="<%- player.order %>-<%- index+1 %>" class="text-center" href="/batterBox?boxId=<%- player.order %>-<%- index+1 %>" onclick="getBoxResult(event)">
+                                                                    <%- element %>
+                                                                </a>
+                                                            </div>
+                                                        </li>
+                                                        <% }); %>
                 </ul>
             </div>
         </div>

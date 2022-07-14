@@ -213,19 +213,24 @@ function getBoxResult(event) {
 
 //打席結果の変更があった場合にフラグを1にする
 function changeFlg() {
-    console.log("changeFlag");
     let changeFlag = document.getElementById('changeFlag');
     changeFlag.value = 1;
 };
 
 function changeNameFlg() {
-    console.log("changeNameFlag");
     let changeFlag = document.getElementById('changeNameFlag');
-    changeFlag.value = true;
+    changeFlag.value = 1;
 };
 
 function changePositionFlg() {
-    console.log("changePositionFlag");
     let changeFlag = document.getElementById('changePositionFlag');
-    changeFlag.value = true;
+    changeFlag.value = 1;
 };
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').then(async(registration) => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch((err) => {
+        console.log('ServiceWorker registration failed: ', err);
+    });
+}

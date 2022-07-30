@@ -442,14 +442,14 @@ router.get('/player', isLogined, function(req, res, next) {
 
 
 /* 
-Method : PUT
-Path : /scorebook
+Method : POST
+Path : /scorebook2
 Description : 
 */
-router.put('/scorebook', isLogined, function(req, res, next) {
+router.post('/scorebook2', isLogined, function(req, res, next) {
 
     debugLogger.debug('=============================');
-    debugLogger.debug('Method : PUT');
+    debugLogger.debug('Method : POST');
     debugLogger.debug('URL : /scorebook');
     debugLogger.debug('session : ' + JSON.stringify(req.session.gameInfo, null, 2));
     debugLogger.debug('Query Param : ' + JSON.stringify(req.params, null, 2));
@@ -461,9 +461,6 @@ router.put('/scorebook', isLogined, function(req, res, next) {
     let boxNo = req.body.boxNum;
     let changeFlag = parseInt(req.body.changeFlag);
     let resBody = globalResBody.slice();
-
-    console.log("changeFlag : " + changeFlag);
-    console.log("boxResult : " + boxResult);
 
     //session解析
     let gameId = req.session.gameInfo.gameId;

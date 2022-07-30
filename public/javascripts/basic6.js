@@ -250,3 +250,8 @@ function finishButtonClick() {
     }
 
 }
+
+function undisabled() {
+    document.getElementById("result").disabled = false;
+    return true;
+}

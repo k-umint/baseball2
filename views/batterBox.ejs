@@ -28,21 +28,6 @@
             <div id="green-field" class="row">
                 <div id="brown-field" class="col border border-white m-3">
                     <div id="white-field" class="border border-dark rounded m-2">
-                        <!-- <div id="order">打順 : 1</div>
-                    <div id="name">新村一真 #2</div>
-                    <div id="box_count">第四打席</div>
-                    <input class="border border-dark rounded" id="result" value="右邪飛"></input>
-                    <ul id="boxCountList">
-                        <li id="box_count_1">第一打席：&nbsp;&nbsp;<p>左本</p>
-                        </li>
-                        <li id="box_count_2">第二打席：&nbsp;&nbsp;<p>三振</p>
-                        </li>
-                        <li id="box_count_3">第三打席：&nbsp;&nbsp;<p>一ゴロ</p>
-                        </li>
-                    </ul> -->
-                        <!-- <div id="order">打順 :
-                            <%- responseBody.batterInfo[0].orderNo %>
-                        </div> -->
                         <div id="name">
                             <%- responseBody.batterInfo[0].playerName %>
                         </div>
@@ -51,8 +36,7 @@
                                 打席
                         </div>
 
-                        <form action="/scorebook?_method=PUT" method="post">
-                            <!-- <input type="hidden" name="_method" value="PUT"> -->
+                        <form action="/scorebook2" method="post">
                             <input id="result" class="border border-dark rounded" name="result" value="<%- responseBody.batterInfo[0].boxResult %>" disabled></input>
 
                             <div id="typeAndresult">
@@ -66,7 +50,7 @@
                             <input id="orderNum" type="hidden" name="orderNum" value=<%- responseBody.batterInfo[0].orderNo %>>
                             <input id="boxNum" type="hidden" name="boxNum" value=<%- responseBody.batterInfo[0].boxNum %>>
                             <input id="changeFlag" type="hidden" name="changeFlag" value=0>
-                            <input id="resultEnterBtn" class="btn btn-success btn-lg" type="submit" value="決定">
+                            <input id="resultEnterBtn" class="btn btn-success btn-lg" type="submit" onclick="undisabled()" value="決定">
                         </form>
 
                         <button id="changeButton" class="btn btn-light" onclick="changeButtonClick()">変更</button>

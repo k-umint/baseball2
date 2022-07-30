@@ -1,61 +1,59 @@
 html body {
-    background-color: #f4f5f7;
+  background-color: #f4f5f7;
 }
 
 @media screen and (min-width: 481px) {
-    html body div#main {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
+  html body div#main {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
 }
 
 html body div#main div#green-field {
-    padding-top: 60px;
-    margin: 0 auto;
-    background-color: #99cc33;
+  padding-top: 60px;
+  margin: 0 auto;
+  background-color: #99cc33;
 }
 
 @media screen and (min-width: 481px) {
-    html body div#main div#green-field {
-        width: 600px;
-    }
+  html body div#main div#green-field {
+    width: 600px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    html body div#main div#green-field {
-        height: 100%;
-    }
+  html body div#main div#green-field {
+    height: 100%;
+  }
 }
 
 html body div#main div#green-field div#brown-field {
-    background-color: #cc6633;
-    border-width: 5px !important;
+  background-color: #8b4513;
+  border-width: 5px !important;
 }
 
 html body div#main div#green-field div#brown-field h2 {
-    text-decoration: underline;
-    color: aliceblue;
+  text-decoration: underline;
+  color: aliceblue;
 }
 
 @media screen and (max-width: 480px) {
-    html body div#main div#green-field div#brown-field table tbody tr th {
-        padding: 6px 12px;
-    }
+  html body div#main div#green-field div#brown-field table tbody tr th {
+    padding: 6px 12px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    html body div#main div#green-field div#brown-field table tbody tr td {
-        padding: 6px 12px;
-    }
+  html body div#main div#green-field div#brown-field table tbody tr td {
+    padding: 6px 12px;
+  }
 }
 
 html body div#main div#green-field div#brown-field input.btn {
-    margin-bottom: 20px;
-    float: right;
-    width: 100px;
-    font-weight: bold;
+  margin-bottom: 20px;
+  float: right;
+  width: 100px;
+  font-weight: bold;
 }
-
-
 /*# sourceMappingURL=style.css.map */

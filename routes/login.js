@@ -9,18 +9,18 @@ const bcrypt = require('bcrypt');
 var nodemailer = require("nodemailer");
 const { Console } = require('console');
 
-// let db_config = {
-//         host: 'localhost',
-//         user: 'root',
-//         password: 'root',
-//         database: 'baseball_score'
-//     }
 let db_config = {
-    host: 'us-cdbr-east-04.cleardb.com',
-    user: 'b20f0b5811dcf3',
-    password: '2e170047',
-    database: 'heroku_8f451d7112f306c'
-}
+        host: 'localhost',
+        user: 'root',
+        password: 'root',
+        database: 'baseball_score'
+    }
+    // let db_config = {
+    //     host: 'us-cdbr-east-04.cleardb.com',
+    //     user: 'b20f0b5811dcf3',
+    //     password: '2e170047',
+    //     database: 'heroku_8f451d7112f306c'
+    // }
 
 let connection;
 

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style_forbatterBox.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+
+    <!-- <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon2.ico"> -->
+
+    <title>Batting Results | BatterBox</title>
+
+</head>
+
+<body>
+
+    <%- include("components/header"); %>
+
+        <div id="main">
+            <!-- <div class="container"> -->
+            <!-- <div id="green-field" class="row justify-content-center align-self-center bg-success"> -->
+            <div id="green-field" class="row">
+                <div id="brown-field" class="col border border-white m-3">
+                    <div id="white-field" class="border border-dark rounded m-2">
+                        <!-- <div id="order">打順 : 1</div>
+                    <div id="name">新村一真 #2</div>
+                    <div id="box_count">第四打席</div>
+                    <input class="border border-dark rounded" id="result" value="右邪飛"></input>
+                    <ul id="boxCountList">
+                        <li id="box_count_1">第一打席：&nbsp;&nbsp;<p>左本</p>
+                        </li>
+                        <li id="box_count_2">第二打席：&nbsp;&nbsp;<p>三振</p>
+                        </li>
+                        <li id="box_count_3">第三打席：&nbsp;&nbsp;<p>一ゴロ</p>
+                        </li>
+                    </ul> -->
+                        <div id="order">打順 :
+                            <%- responseBody.batterInfo[0].orderNo %>
+                        </div>
+                        <div id="name">
+                            <%- responseBody.batterInfo[0].playerName %>
+                        </div>
+                        <div id="box_count">第
+                            <%- responseBody.batterInfo[0].boxNum %>
+                                打席
+                        </div>
+
+                        <form action="/scorebook?_method=PUT" method="post">
+                            <!-- <input type="hidden" name="_method" value="PUT"> -->
+                            <input class="border border-dark rounded" id="result" name="result" onchange="changeFlg()" value="<%- responseBody.batterInfo[0].boxResult %>" maxlength="3"></input>
+                            <input id="orderNum" type="hidden" name="orderNum" value=<%- responseBody.batterInfo[0].orderNo %>>
+                            <input id="boxNum" type="hidden" name="boxNum" value=<%- responseBody.batterInfo[0].boxNum %>>
+                            <input id="changeFlag" type="hidden" name="changeFlag" value=0>
+                            <input id="resultEnterBtn" class="btn btn-success btn-lg" type="submit" value="決定">
+                        </form>
+
+                        <a href="/back" id="back" class="btn btn-warning">戻る</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS  -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <!-- <script src="/javascripts/basic2.js"></script> -->
+        <script src="/javascripts/submit.js"></script>
+</body>
+
+</html>

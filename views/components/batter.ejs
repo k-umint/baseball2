@@ -1,0 +1,65 @@
+<%# player.order +=1; %>
+
+    <tr class="tablebody-tr">
+        <td class="text-center batter_num">
+            <%- player.order %>
+        </td>
+        <td>
+            <div id="name_<%- player.order %>" class="batter_name">
+                <a id="aTag_player_<%- player.order %> " class="text-center"
+                    href="/player?order=<%- player.order %>&name=<%- player.name %>">
+                    <%- player.name %>
+                </a>
+            </div>
+        </td>
+
+        <td class="batter_box_td">
+            <div id="box_<%- player.order %>-1" class="hitting_result">
+                <a id="aTagId_<%- player.order %>-1" class="text-center" href="/batterBox?boxId=<%- player.order %>-1"
+                    onclick="getBoxResult(event)">
+                    <%- player.box_1 %>
+                </a>
+            </div>
+        </td>
+
+        <td class="batter_box_td">
+            <div id="box_<%- player.order %>-2" class="hitting_result">
+                <a id="aTagId_<%- player.order %>-2" class="text-center" href="/batterBox?boxId=<%- player.order %>-2"
+                    onclick="getBoxResult(event)">
+                    <%- player.box_2 %>
+                </a>
+            </div>
+        </td>
+        <td class="batter_box_td">
+            <div id="box_<%- player.order %>-3" class="hitting_result">
+                <a id="aTagId_<%- player.order %>-3" class="text-center" href="/batterBox?boxId=<%- player.order %>-3"
+                    onclick="getBoxResult(event)">
+                    <%- player.box_3 %>
+                </a>
+            </div>
+        </td>
+        <td class="batter_box_td">
+            <div id="box_<%- player.order %>-4" class="hitting_result">
+                <a id="aTagId_<%- player.order %>-4" class="text-center" href="/batterBox?boxId=<%- player.order %>-4"
+                    onclick="getBoxResult(event)">
+                    <%- player.box_4 %>
+                </a>
+            </div>
+        </td>
+        <td class="batter_box_td">
+            <div id="box_<%- player.order %>-5" class="hitting_result">
+                <a id="aTagId_<%- player.order %>-5" class="text-center" href="/batterBox?boxId=<%- player.order %>-5"
+                    onclick="getBoxResult(event)">
+                    <%- player.box_5 %>
+                </a>
+            </div>
+        </td>
+        <td class="batter_box_td">
+            <div id="box_<%- player.order %>-6" class="hitting_result">
+                <a id="aTagId_<%- player.order %>-6" class="text-center" href="/batterBox?boxId=<%- player.order %>-6"
+                    onclick="getBoxResult(event)">
+                    <%- player.box_6 %>
+                </a>
+            </div>
+        </td>
+    </tr>

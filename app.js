@@ -17,20 +17,6 @@ var loginRouter = require('./routes/login');
 var usersRouter = require('./routes/users');
 const { Console } = require('console');
 
-// // Infomations of database
-// const connection = mysql.createConnection({
-//   host: 'us-cdbr-east-04.cleardb.com',
-//   user: 'b20f0b5811dcf3',
-//   password: '2e170047',
-//   database: 'heroku_8f451d7112f306c'
-// });
-
-// // Connection to Database
-// connection.connect(function (err) {
-//   if (err) throw err;
-//   console.log('Connected');
-// });
-
 var app = express();
 
 // let db_config = {

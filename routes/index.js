@@ -31,7 +31,6 @@ function handleDisconnect() {
     connection.connect(function(err) {
         if (err) {
             console.log('ERROR.CONNECTION_DB: ', err);
-            // setTimeout(handleDisconnect, 1000);
             setTimeout(handleDisconnect, 180 * 60 * 8 * 1000);
         }
     });
@@ -67,9 +66,8 @@ log4js.configure({
 });
 
 //情報出力用のログ
-const defaultLogger = log4js.getLogger();
+// const defaultLogger = log4js.getLogger();
 // defaultLogger.info('infomation');
-// debugLogger.warn('warning!!!');
 
 //デバッグ用のログ
 const debugLogger = log4js.getLogger('debug');
@@ -89,7 +87,6 @@ let globalGameId;
 
 //ログイン認証
 let isLogined = function(req, res, next) {
-    // console.log(JSON.stringify(req.session, null, 2));
     if (req.isAuthenticated()) {
         return next();
     } else {
@@ -139,7 +136,7 @@ router.get('/games_history', isLogined, function(req, res, next) {
 
     let userId = req.session.passport.user;
 
-    let selectAllGames = `SELECT * FROM game ORDER BY game.date`
+    let selectAllGames = `SELECT * FROM game WHERE user_id = "${userId}" ORDER BY game.date`
 
     connection.query(selectAllGames, function(err, results, fields) {
         if (err) { throw err };

@@ -27,13 +27,11 @@ let connection;
 function handleDisconnect() {
     console.log('INFO.CONNECTION_DB: ');
     connection = mysql.createConnection(db_config);
-    // connection = mysql.createPool(db_config);
 
     //connection取得
     connection.connect(function(err) {
         if (err) {
             console.log('ERROR.CONNECTION_DB: ', err);
-            // setTimeout(handleDisconnect, 1000);
             setTimeout(handleDisconnect, 180 * 60 * 8 * 1000);
         }
     });
@@ -80,6 +78,7 @@ const defaultLogger = log4js.getLogger();
 
 //デバッグ用のログ
 const debugLogger = log4js.getLogger('debug');
+// debugLogger.debug('debugging');
 
 /* 
 Method : GET
@@ -93,8 +92,6 @@ router.get('/', function(req, res, next) {
     debugLogger.debug('session : ' + JSON.stringify(req.session, null, 2));
     debugLogger.debug('cookie : ' + JSON.stringify(req.cookies, null, 2));
     debugLogger.debug('=============================');
-
-    // res.cookie('test', 'aaa', { maxAge: 60000, httpOnly: false });
 
     let err = req.flash('error');
 
@@ -184,10 +181,12 @@ router.post('/signup', function(req, res) {
                     //SMTPサーバの設定(Outlookからの送信設定)
                     var smtp = nodemailer.createTransport({
                         host: 'smtp.gmail.com',
-                        port: 587,
+                        // port: 587,
+                        port: 465,
+                        secure: true,
                         auth: {
                             user: "baseballscore.info@gmail.com",
-                            pass: "ntdzejjcmwfivtxi"
+                            pass: "gcqegtardatahsvj"
                         }
                     });
 
@@ -197,7 +196,7 @@ router.post('/signup', function(req, res) {
                         to: id,
                         subject: 'Batting Results - メール認証',
                         html: `<p>以下のリンクからアカウントの確認を行ってください｡</p><br>
-            <a href="https://baseball-score-keysers.herokuapp.com/login/signup/${token}" >メール認証を完了する</a>`
+            <a href="https://batting-results.herokuapp.com/login/signup/${token}" >メール認証を完了する</a>`
                     };
 
                     // var message = {

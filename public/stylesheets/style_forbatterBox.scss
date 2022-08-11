@@ -1,0 +1,262 @@
+@import "_breakpoints";
+@import "header.scss";
+@import "_mixin";
+html {
+    @include mq(sm) {
+        height: 100%;
+    }
+    body {
+        background-color: #000;
+        @include mq(sm) {
+            height: 100%;
+        }
+        div#main {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            @include mq(sm) {
+                height: 100%;
+            }
+            div#green-field {
+                @extend %boxNeon;
+                @extend %textNeon;
+                padding-top: 60px;
+                margin: 0 auto;
+                @include mq(md) {
+                    width: 600px;
+                }
+                @include mq(sm) {
+                    height: 100%;
+                }
+                div#brown-field {
+                    @extend %boxNeon;
+                    @include mq(md) {
+                        height: 700px;
+                        padding-top: 15px;
+                    }
+                    @include mq(sm) {
+                        height: 94%;
+                        padding: 0;
+                    }
+                    div#white-field {
+                        @extend %boxNeon;
+                        @include mq(md) {
+                            height: 96%;
+                            position: relative;
+                        }
+                        @include mq(sm) {
+                            height: 96%;
+                            position: relative;
+                        }
+                        #order {
+                            @include mq(md) {
+                                position: absolute;
+                                width: 33%;
+                                height: auto;
+                                top: 15px;
+                                left: 10px;
+                                font-size: xx-large;
+                            }
+                            @include mq(sm) {
+                                position: absolute;
+                                width: 50%;
+                                height: auto;
+                                top: 15px;
+                                left: 10px;
+                                font-size: xx-large;
+                            }
+                        }
+                        #name {
+                            @include mq(md) {
+                                position: absolute;
+                                text-align: center;
+                                width: 90%;
+                                height: auto;
+                                top: 100px;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                font-size: 50px;
+                                font-weight: bold;
+                            }
+                            @include mq(sm) {
+                                position: absolute;
+                                text-align: center;
+                                width: 90%;
+                                height: auto;
+                                top: 75px;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                font-size: 50px;
+                                font-weight: bold;
+                            }
+                        }
+                        #box_count {
+                            @include mq(md) {
+                                position: absolute;
+                                text-align: center;
+                                width: 40%;
+                                height: auto;
+                                top: 200px;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                font-size: 30px;
+                            }
+                            @include mq(sm) {
+                                position: absolute;
+                                text-align: center;
+                                width: 40%;
+                                height: auto;
+                                top: 155px;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                font-size: 30px;
+                            }
+                        }
+                        form {
+                            #result {
+                                @extend %boxNeon;
+                                @extend %textNeon;
+                                @include mq(md) {
+                                    position: absolute;
+                                    text-align: center;
+                                    width: 80%;
+                                    height: auto;
+                                    top: 290px;
+                                    left: 50%;
+                                    transform: translateY(0) translateX(-50%);
+                                    font-size: 40px;
+                                }
+                                @include mq(sm) {
+                                    position: absolute;
+                                    text-align: center;
+                                    width: 80%;
+                                    height: 70px;
+                                    top: 215px;
+                                    left: 50%;
+                                    transform: translateY(0) translateX(-50%);
+                                    font-size: 40px;
+                                }
+                            }
+                            #result:disabled {
+                                @include mq(md) {
+                                    color: #fff;
+                                }
+                                @include mq(sm) {
+                                    -webkit-text-fill-color: #fff;
+                                    opacity: 1;
+                                }
+                            }
+                            #typeAndresult {
+                                @include mq(md) {
+                                    width: 60%;
+                                    position: absolute;
+                                    top: 290px;
+                                    left: 50%;
+                                    transform: translateY(0) translateX(-40%);
+                                }
+                                @include mq(sm) {
+                                    width: 60%;
+                                    position: absolute;
+                                    top: 205px;
+                                    left: 50%;
+                                    transform: translateY(0) translateX(-40%);
+                                }
+                                #selectType {
+                                    @include mq(md) {
+                                        width: 80%;
+                                        margin-bottom: 30px;
+                                    }
+                                    @include mq(sm) {
+                                        width: 80%;
+                                        margin-bottom: 15px;
+                                    }
+                                }
+                                #selectBattingResult {
+                                    @include mq(md) {
+                                        width: 80%;
+                                    }
+                                    @include mq(sm) {
+                                        width: 80%;
+                                    }
+                                }
+                            }
+                            #resultEnterBtn {
+                                @extend %boxNeon;
+                                @extend %textNeon;
+                                @include mq(md) {
+                                    position: absolute;
+                                    top: 450px;
+                                    left: 50%;
+                                    width: 200px;
+                                    transform: translateY(0) translateX(-50%);
+                                }
+                                @include mq(sm) {
+                                    position: absolute;
+                                    top: 355px;
+                                    left: 50%;
+                                    width: 200px;
+                                    transform: translateY(0) translateX(-50%);
+                                }
+                            }
+                        }
+                        #changeButton {
+                            @include mq(md) {
+                                position: absolute;
+                                top: 400px;
+                                left: 50%;
+                                width: 200px;
+                                transform: translateY(0) translateX(-50%);
+                            }
+                            @include mq(sm) {
+                                position: absolute;
+                                top: 305px;
+                                left: 50%;
+                                width: 200px;
+                                transform: translateY(0) translateX(-50%);
+                            }
+                        }
+                        #finishButton {
+                            @include mq(md) {
+                                position: absolute;
+                                top: 500px;
+                                left: 50%;
+                                width: 200px;
+                                transform: translateY(0) translateX(-50%);
+                            }
+                            @include mq(sm) {
+                                position: absolute;
+                                top: 370px;
+                                left: 50%;
+                                width: 200px;
+                                transform: translateY(0) translateX(-50%);
+                            }
+                        }
+                        a#back {
+                            @extend %boxNeon;
+                            @extend %textNeon;
+                            @include mq(md) {
+                                position: absolute;
+                                display: inline-block;
+                                top: 20px;
+                                left: 80%;
+                                width: 120px;
+                                height: 50px;
+                                line-height: 200%;
+                                font-size: large;
+                                transform: translateY(0) translateX(-50%);
+                            }
+                            @include mq(sm) {
+                                position: absolute;
+                                display: inline-block;
+                                top: 20px;
+                                left: 80%;
+                                width: 80px;
+                                transform: translateY(0) translateX(-50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

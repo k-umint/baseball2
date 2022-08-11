@@ -1,0 +1,166 @@
+@import "_breakpoints";
+@import "_mixin";
+@import "header.scss";
+html {
+    background-color: #000;
+    @include mq(sm) {
+        height: 100%;
+    }
+    body {
+        background-color: #f4f5f7;
+        @include mq(sm) {
+            height: 100%;
+        }
+        div#main {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            @include mq(sm) {
+                height: 100%;
+            }
+            div#green-field {
+                @extend %boxNeon;
+                padding-top: 60px;
+                margin: 0 auto;
+                background-color: #000;
+                @include mq(md) {
+                    width: 600px;
+                }
+                @include mq(sm) {
+                    height: 100%;
+                }
+                div#brown-field {
+                    @extend %boxNeon;
+                    padding: 0;
+                    @include mq(md) {
+                        height: 700px;
+                    }
+                    @include mq(sm) {
+                        height: 94%;
+                    }
+                    div#white-field {
+                        @extend %boxNeon;
+                        @extend %textNeon;
+                        height: 94%;
+                        position: relative;
+                        @include mq(md) {
+                            margin: 20px;
+                        }
+                        @include mq(sm) {
+                            margin: 15px;
+                        }
+                        #title_login {
+                            @extend %textNeon;
+                            position: absolute;
+                            text-align: center;
+                            width: 90%;
+                            height: auto;
+                            left: 50%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 50px;
+                            font-weight: bold;
+                            @include mq(md) {
+                                top: 70px;
+                            }
+                            @include mq(sm) {
+                                top: 40px;
+                            }
+                        }
+                        form {
+                            input#login_id {
+                                @extend %boxNeon;
+                                @extend %textNeon;
+                                position: absolute;
+                                height: auto;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                text-align: left;
+                                @include mq(md) {
+                                    width: 40%;
+                                    top: 190px;
+                                    font-size: 30px;
+                                }
+                                @include mq(sm) {
+                                    width: 70%;
+                                    top: 140px;
+                                    font-size: 25px;
+                                }
+                            }
+                            input#login_pass {
+                                @extend %boxNeon;
+                                @extend %textNeon;
+                                position: absolute;
+                                left: 50%;
+                                height: auto;
+                                transform: translateY(0) translateX(-50%);
+                                text-align: left;
+                                @include mq(md) {
+                                    width: 40%;
+                                    top: 260px;
+                                    font-size: 30px;
+                                }
+                                @include mq(sm) {
+                                    width: 70%;
+                                    top: 210px;
+                                    font-size: 25px;
+                                }
+                            }
+                            h5#error-message {
+                                width: 100%;
+                                position: absolute;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                text-align: center;
+                                color: red;
+                                @include mq(md) {
+                                    top: 315px;
+                                }
+                                @include mq(sm) {
+                                    top: 270px;
+                                }
+                            }
+                            input#loginBtn {
+                                @extend %boxNeon;
+                                @extend %textNeon;
+                                position: absolute;
+                                text-align: center;
+                                height: auto;
+                                padding: 0;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                font-size: 30px;
+                                @include mq(md) {
+                                    top: 400px;
+                                    width: 40%;
+                                }
+                                @include mq(sm) {
+                                    top: 300px;
+                                    width: 70%;
+                                }
+                            }
+                        }
+                        a#registBtn {
+                            @extend %textNeon;
+                            position: absolute;
+                            text-align: center;
+                            text-decoration: underline;
+                            width: 40%;
+                            height: auto;
+                            padding: 0;
+                            left: 50%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                            @include mq(md) {
+                                top: 470px;
+                            }
+                            @include mq(sm) {
+                                top: 360px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

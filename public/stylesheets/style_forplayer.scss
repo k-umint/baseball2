@@ -1,0 +1,157 @@
+@import "_breakpoints";
+@import "_mixin";
+@import "header.scss";
+html {
+    @include mq(sm) {
+        height: 100%;
+    }
+    body {
+        background-color: #000;
+        @include mq(sm) {
+            height: 100%;
+        }
+        div#main {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            @include mq(sm) {
+                height: 100%;
+            }
+            div#green-field {
+                @extend %boxNeon;
+                @extend %textNeon;
+                padding-top: 60px;
+                margin: 0 auto;
+                @include mq(md) {
+                    width: 600px;
+                }
+                @include mq(sm) {
+                    height: 100%;
+                }
+                div#brown-field {
+                    @include mq(md) {
+                        height: 700px;
+                        padding-top: 15px;
+                    }
+                    @include mq(sm) {
+                        height: 94%;
+                        padding: 0;
+                    }
+                    div#white-field {
+                        @extend %boxNeon;
+                        height: 96%;
+                        position: relative;
+                        #order_div {
+                            position: absolute;
+                            width: 33%;
+                            height: auto;
+                            top: 15px;
+                            left: 10px;
+                            font-size: xx-large;
+                        }
+                        #name_div {
+                            position: absolute;
+                            text-align: center;
+                            width: 90%;
+                            height: auto;
+                            left: 20%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                            font-weight: bold;
+                            @include mq(md) {
+                                top: 200px;
+                            }
+                            @include mq(sm) {
+                                top: 130px;
+                            }
+                        }
+                        #name {
+                            @extend %boxNeon;
+                            @extend %textNeon;
+                            position: absolute;
+                            text-align: center;
+                            width: 60%;
+                            height: auto;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                            @include mq(md) {
+                                top: 200px;
+                                left: 60%;
+                            }
+                            @include mq(sm) {
+                                top: 120px;
+                                left: 65%;
+                            }
+                        }
+                        #position_div {
+                            position: absolute;
+                            text-align: center;
+                            width: 40%;
+                            height: auto;
+                            left: 20%;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                            font-weight: bold;
+                            @include mq(md) {
+                                top: 280px;
+                            }
+                            @include mq(sm) {
+                                top: 210px;
+                            }
+                        }
+                        #position {
+                            @extend %boxNeon;
+                            @extend %textNeon;
+                            position: absolute;
+                            text-align: center;
+                            width: 30%;
+                            height: auto;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 30px;
+                            @include mq(md) {
+                                top: 270px;
+                                left: 45%;
+                            }
+                            @include mq(sm) {
+                                top: 200px;
+                                left: 50%;
+                            }
+                        }
+                        #resultEnterBtn {
+                            @extend %boxNeon;
+                            @extend %textNeon;
+                            position: absolute;
+                            left: 50%;
+                            width: 200px;
+                            transform: translateY(0) translateX(-50%);
+                            @include mq(md) {
+                                top: 400px;
+                            }
+                            @include mq(sm) {
+                                top: 310px;
+                            }
+                        }
+                        a#back {
+                            @extend %boxNeon;
+                            @extend %textNeon;
+                            position: absolute;
+                            display: inline-block;
+                            top: 20px;
+                            left: 80%;
+                            transform: translateY(0) translateX(-50%);
+                            @include mq(md) {
+                                width: 120px;
+                                height: 50px;
+                                line-height: 200%;
+                                font-size: large;
+                            }
+                            @include mq(sm) {
+                                width: 80px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

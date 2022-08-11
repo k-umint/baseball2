@@ -1,0 +1,81 @@
+@import "_breakpoints";
+@import "_mixin";
+html {
+    body {
+        background-color: #f4f5f7;
+        div#main {
+            @include mq(md) {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+            div#green-field {
+                padding-top: 60px;
+                margin: 0 auto;
+                background-color: #99cc33;
+                @include mq(md) {
+                    width: 600px;
+                }
+                @include mq(sm) {
+                    height: 100%;
+                }
+                div#brown-field {
+                    background-color: #8b4513;
+                    border-width: 5px !important;
+                    h2 {
+                        text-decoration: underline;
+                        color: aliceblue;
+                    }
+                    table {
+                        tbody {
+                            tr {
+                                th {
+                                    @include mq(sm) {
+                                        padding: 6px 12px;
+                                    }
+                                }
+                                td {
+                                    @include mq(sm) {
+                                        padding: 6px 12px;
+                                    }
+                                }
+                            }
+                            // .batter_num {
+                            //     width: 56px;
+                            //     font-weight: bold;
+                            // }
+                            // .batter_name {
+                            //     font-size: small;
+                            // }
+                            // .batter_box_td {
+                            //     width: 60px;
+                            //     height: 50px;
+                            //     padding: 0;
+                            //     border: solid 1px black;
+                            //     .hitting_result {
+                            //         width: 100%;
+                            //         height: 100%;
+                            //         line-height: 50px;
+                            //         a {
+                            //             display: inline-block;
+                            //             // line-height: 50%;
+                            //             vertical-align: middle;
+                            //             width: 100%;
+                            //             height: 100%;
+                            //             font-weight: bold;
+                            //         }
+                            //     }
+                            // }
+                        }
+                    }
+                    input.btn {
+                        margin-bottom: 20px;
+                        float: right;
+                        width: 100px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

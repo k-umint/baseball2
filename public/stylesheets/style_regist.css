@@ -1,0 +1,189 @@
+header div#header_container, header div#header_container a#logoutBtn, html body div#main div#green-field, html body div#main div#green-field div#brown-field, html body div#main div#green-field div#brown-field div#white-field {
+  background-color: #000;
+  border: 3px solid #fff;
+  -webkit-box-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen, inset 0px 0px 3px green, inset 0px 0px 6px yellowgreen;
+          box-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen, inset 0px 0px 3px green, inset 0px 0px 6px yellowgreen;
+}
+
+header div#header_container div#userId_info p, header div#header_container a#logoutBtn, html body div#main div#green-field div#brown-field div#white-field {
+  color: #fff;
+  text-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen;
+}
+
+header {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  z-index: 1;
+  margin-right: 0px;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header div#header_container {
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container {
+    width: 100%;
+  }
+}
+
+header div#header_container div#userId_info {
+  position: absolute;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container div#userId_info {
+    top: 15px;
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container div#userId_info {
+    top: 20px;
+    left: 4px;
+  }
+}
+
+header div#header_container div#userId_info p {
+  font-weight: bold;
+  font-size: large;
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container div#userId_info p {
+    font-size: medium;
+  }
+}
+
+header div#header_container a#logoutBtn {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  top: 10px;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container a#logoutBtn {
+    left: 80%;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container a#logoutBtn {
+    left: 70%;
+    width: 100px;
+    font-size: smaller;
+  }
+}
+
+html {
+  background-color: #000;
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    height: 100%;
+  }
+}
+
+html body {
+  background-color: #f4f5f7;
+}
+
+@media screen and (max-width: 480px) {
+  html body {
+    height: 100%;
+  }
+}
+
+html body div#main {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main {
+    height: 100%;
+  }
+}
+
+html body div#main div#green-field {
+  padding-top: 20px;
+  margin: 0 auto;
+  background-color: #000;
+}
+
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field {
+    height: 100%;
+  }
+}
+
+html body div#main div#green-field div#brown-field {
+  padding: 0;
+}
+
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field {
+    height: 700px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field {
+    height: 94%;
+  }
+}
+
+html body div#main div#green-field div#brown-field div#white-field {
+  height: 30%;
+  position: relative;
+}
+
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field div#white-field {
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field {
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field div#white-field div#registMessage {
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field div#registMessage {
+    margin: 15px;
+  }
+}
+/*# sourceMappingURL=style_regist.css.map */

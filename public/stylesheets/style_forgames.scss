@@ -1,0 +1,126 @@
+@import "_breakpoints";
+@import "_mixin";
+@import "header.scss";
+html {
+    @include mq(sm) {
+        height: 100%;
+    }
+    body {
+        background-color: #000;
+        @include mq(sm) {
+            height: 100%;
+        }
+        div#main {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            @include mq(sm) {
+                height: 100%;
+            }
+            div#green-field {
+                @extend %boxNeon;
+                @extend %textNeon;
+                padding-top: 60px;
+                margin: 0 auto;
+                @include mq(md) {
+                    width: 600px;
+                }
+                @include mq(sm) {
+                    height: 100%;
+                }
+                div#brown-field {
+                    @extend %boxNeon;
+                    @extend %textNeon;
+                    @include mq(md) {
+                        height: 700px;
+                    }
+                    @include mq(sm) {
+                        height: 94%;
+                        padding: 0 10px;
+                    }
+                    #goHomeBtn {
+                        @extend %boxNeon;
+                        @extend %textNeon;
+                        position: absolute;
+                        transform: translateY(0) translateX(-50%);
+                        @include mq(md) {
+                            top: 620px;
+                            left: 50%;
+                        }
+                        @include mq(sm) {
+                            width: 100px;
+                            top: 90px;
+                            left: 80%;
+                        }
+                    }
+                    .list-group {
+                        #scroll-container {
+                            overflow: auto;
+                            @include mq(md) {
+                                height: 550px;
+                                margin-top: 30px;
+                            }
+                            @include mq(sm) {
+                                height: 370px;
+                                margin-top: 70px;
+                            }
+                            a.scroll-item {
+                                @extend %boxNeon;
+                                @extend %textNeon;
+                                overflow: hidden;
+                                @include mq(md) {
+                                    margin-bottom: 10px;
+                                }
+                                @include mq(sm) {
+                                    padding: 10px 0;
+                                    margin-bottom: 3px;
+                                    height: 60px;
+                                    position: relative;
+                                    display: inline-block;
+                                }
+                                p {
+                                    margin: 0;
+                                    display: inline-block;
+                                    @include mq(sm) {
+                                        position: absolute;
+                                    }
+                                    &.p-date {
+                                        @include mq(md) {
+                                            font-size: 20px;
+                                            width: 30%;
+                                        }
+                                        @include mq(sm) {
+                                            font-size: 15px;
+                                            width: 20%;
+                                            top: 50%;
+                                            left: 5%;
+                                            transform: translateY(-50%) translateX(0);
+                                        }
+                                    }
+                                    &.p-vs {
+                                        @include mq(sm) {
+                                            top: 60%;
+                                            left: 30%;
+                                            transform: translateY(-50%) translateX(0);
+                                        }
+                                    }
+                                    &.p-opponent {
+                                        @include mq(md) {
+                                            font-size: 30px;
+                                        }
+                                        @include mq(sm) {
+                                            font-size: 25px;
+                                            top: 55%;
+                                            left: 40%;
+                                            transform: translateY(-50%) translateX(0);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

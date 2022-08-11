@@ -1,3 +1,96 @@
+header div#header_container, header div#header_container a#logoutBtn, html body div#main div#green-field, html body div#main div#green-field div#brown-field div#white-field, html body div#main div#green-field div#brown-field div#white-field #name, html body div#main div#green-field div#brown-field div#white-field #position, html body div#main div#green-field div#brown-field div#white-field #resultEnterBtn, html body div#main div#green-field div#brown-field div#white-field a#back {
+  background-color: #000;
+  border: 3px solid #fff;
+  -webkit-box-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen, inset 0px 0px 3px green, inset 0px 0px 6px yellowgreen;
+          box-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen, inset 0px 0px 3px green, inset 0px 0px 6px yellowgreen;
+}
+
+header div#header_container div#userId_info p, header div#header_container a#logoutBtn, html body div#main div#green-field, html body div#main div#green-field div#brown-field div#white-field #name, html body div#main div#green-field div#brown-field div#white-field #position, html body div#main div#green-field div#brown-field div#white-field #resultEnterBtn, html body div#main div#green-field div#brown-field div#white-field a#back {
+  color: #fff;
+  text-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen;
+}
+
+header {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  z-index: 1;
+  margin-right: 0px;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header div#header_container {
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container {
+    width: 100%;
+  }
+}
+
+header div#header_container div#userId_info {
+  position: absolute;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container div#userId_info {
+    top: 15px;
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container div#userId_info {
+    top: 20px;
+    left: 4px;
+  }
+}
+
+header div#header_container div#userId_info p {
+  font-weight: bold;
+  font-size: large;
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container div#userId_info p {
+    font-size: medium;
+  }
+}
+
+header div#header_container a#logoutBtn {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  top: 10px;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container a#logoutBtn {
+    left: 80%;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container a#logoutBtn {
+    left: 70%;
+    width: 100px;
+    font-size: smaller;
+  }
+}
+
 @media screen and (max-width: 480px) {
   html {
     height: 100%;
@@ -5,7 +98,7 @@
 }
 
 html body {
-  background-color: #f4f5f7;
+  background-color: #000;
 }
 
 @media screen and (max-width: 480px) {
@@ -29,7 +122,6 @@ html body div#main {
 html body div#main div#green-field {
   padding-top: 60px;
   margin: 0 auto;
-  background-color: #99cc33;
 }
 
 @media screen and (min-width: 481px) {
@@ -44,97 +136,10 @@ html body div#main div#green-field {
   }
 }
 
-html body div#main div#green-field div#brown-field {
-  background-color: #cc6633;
-  border-width: 5px !important;
-}
-
 @media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field {
     height: 700px;
     padding-top: 15px;
-  }
-  html body div#main div#green-field div#brown-field div#white-field {
-    height: 96%;
-    background-color: #fff;
-    position: relative;
-  }
-  html body div#main div#green-field div#brown-field div#white-field #order_div {
-    position: absolute;
-    width: 33%;
-    height: auto;
-    top: 15px;
-    left: 10px;
-    font-size: xx-large;
-  }
-  html body div#main div#green-field div#brown-field div#white-field #name_div {
-    position: absolute;
-    text-align: center;
-    width: 90%;
-    height: auto;
-    top: 200px;
-    left: 20%;
-    -webkit-transform: translateY(0) translateX(-50%);
-            transform: translateY(0) translateX(-50%);
-    font-size: 30px;
-    font-weight: bold;
-  }
-  html body div#main div#green-field div#brown-field div#white-field #name {
-    position: absolute;
-    text-align: center;
-    width: 60%;
-    height: auto;
-    top: 200px;
-    left: 60%;
-    -webkit-transform: translateY(0) translateX(-50%);
-            transform: translateY(0) translateX(-50%);
-    font-size: 30px;
-  }
-  html body div#main div#green-field div#brown-field div#white-field #position_div {
-    position: absolute;
-    text-align: center;
-    width: 40%;
-    height: auto;
-    top: 280px;
-    left: 20%;
-    -webkit-transform: translateY(0) translateX(-50%);
-            transform: translateY(0) translateX(-50%);
-    font-size: 30px;
-    font-weight: bold;
-  }
-  html body div#main div#green-field div#brown-field div#white-field #position {
-    position: absolute;
-    text-align: center;
-    width: 30%;
-    height: auto;
-    top: 270px;
-    left: 45%;
-    -webkit-transform: translateY(0) translateX(-50%);
-            transform: translateY(0) translateX(-50%);
-    font-size: 30px;
-  }
-  html body div#main div#green-field div#brown-field div#white-field #resultEnterBtn {
-    position: absolute;
-    top: 400px;
-    left: 50%;
-    width: 200px;
-    border: ridge 2px #000;
-    -webkit-transform: translateY(0) translateX(-50%);
-            transform: translateY(0) translateX(-50%);
-  }
-  html body div#main div#green-field div#brown-field div#white-field a#back {
-    position: absolute;
-    display: inline-block;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    top: 20px;
-    left: 80%;
-    width: 120px;
-    height: 50px;
-    line-height: 200%;
-    font-size: large;
-    -webkit-transform: translateY(0) translateX(-50%);
-            transform: translateY(0) translateX(-50%);
   }
 }
 
@@ -143,84 +148,159 @@ html body div#main div#green-field div#brown-field {
     height: 94%;
     padding: 0;
   }
-  html body div#main div#green-field div#brown-field div#white-field {
-    height: 96%;
-    background-color: #fff;
-    position: relative;
-  }
-  html body div#main div#green-field div#brown-field div#white-field #order_div {
-    position: absolute;
-    width: 33%;
-    height: auto;
-    top: 15px;
-    left: 10px;
-    font-size: xx-large;
-  }
+}
+
+html body div#main div#green-field div#brown-field div#white-field {
+  height: 96%;
+  position: relative;
+}
+
+html body div#main div#green-field div#brown-field div#white-field #order_div {
+  position: absolute;
+  width: 33%;
+  height: auto;
+  top: 15px;
+  left: 10px;
+  font-size: xx-large;
+}
+
+html body div#main div#green-field div#brown-field div#white-field #name_div {
+  position: absolute;
+  text-align: center;
+  width: 90%;
+  height: auto;
+  left: 20%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field div#white-field #name_div {
-    position: absolute;
-    text-align: center;
-    width: 90%;
-    height: auto;
-    top: 130px;
-    left: 20%;
-    -webkit-transform: translateY(0) translateX(-50%);
-            transform: translateY(0) translateX(-50%);
-    font-size: 30px;
-    font-weight: bold;
+    top: 200px;
   }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field #name_div {
+    top: 130px;
+  }
+}
+
+html body div#main div#green-field div#brown-field div#white-field #name {
+  position: absolute;
+  text-align: center;
+  width: 60%;
+  height: auto;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 30px;
+}
+
+@media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field div#white-field #name {
-    position: absolute;
-    text-align: center;
-    width: 60%;
-    height: auto;
+    top: 200px;
+    left: 60%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field #name {
     top: 120px;
     left: 65%;
-    -webkit-transform: translateY(0) translateX(-50%);
-            transform: translateY(0) translateX(-50%);
-    font-size: 30px;
   }
+}
+
+html body div#main div#green-field div#brown-field div#white-field #position_div {
+  position: absolute;
+  text-align: center;
+  width: 40%;
+  height: auto;
+  left: 20%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field div#white-field #position_div {
-    position: absolute;
-    text-align: center;
-    width: 40%;
-    height: auto;
-    top: 210px;
-    left: 20%;
-    -webkit-transform: translateY(0) translateX(-50%);
-            transform: translateY(0) translateX(-50%);
-    font-size: 30px;
-    font-weight: bold;
+    top: 280px;
   }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field #position_div {
+    top: 210px;
+  }
+}
+
+html body div#main div#green-field div#brown-field div#white-field #position {
+  position: absolute;
+  text-align: center;
+  width: 30%;
+  height: auto;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 30px;
+}
+
+@media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field div#white-field #position {
-    position: absolute;
-    text-align: center;
-    width: 30%;
-    height: auto;
+    top: 270px;
+    left: 45%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field #position {
     top: 200px;
     left: 50%;
-    -webkit-transform: translateY(0) translateX(-50%);
-            transform: translateY(0) translateX(-50%);
-    font-size: 30px;
   }
+}
+
+html body div#main div#green-field div#brown-field div#white-field #resultEnterBtn {
+  position: absolute;
+  left: 50%;
+  width: 200px;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+}
+
+@media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field div#white-field #resultEnterBtn {
-    position: absolute;
-    top: 310px;
-    left: 50%;
-    width: 200px;
-    border: ridge 2px #000;
-    -webkit-transform: translateY(0) translateX(-50%);
-            transform: translateY(0) translateX(-50%);
+    top: 400px;
   }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field #resultEnterBtn {
+    top: 310px;
+  }
+}
+
+html body div#main div#green-field div#brown-field div#white-field a#back {
+  position: absolute;
+  display: inline-block;
+  top: 20px;
+  left: 80%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+}
+
+@media screen and (min-width: 481px) {
   html body div#main div#green-field div#brown-field div#white-field a#back {
-    position: absolute;
-    display: inline-block;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    top: 20px;
-    left: 80%;
+    width: 120px;
+    height: 50px;
+    line-height: 200%;
+    font-size: large;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field a#back {
     width: 80px;
-    -webkit-transform: translateY(0) translateX(-50%);
-            transform: translateY(0) translateX(-50%);
   }
 }
 /*# sourceMappingURL=style_forplayer.css.map */

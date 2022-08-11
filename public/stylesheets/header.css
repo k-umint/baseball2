@@ -1,9 +1,21 @@
+header div#header_container, header div#header_container a#logoutBtn {
+  background-color: #000;
+  border: 3px solid #fff;
+  -webkit-box-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen, inset 0px 0px 3px green, inset 0px 0px 6px yellowgreen;
+          box-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen, inset 0px 0px 3px green, inset 0px 0px 6px yellowgreen;
+}
+
+header div#header_container div#userId_info p, header div#header_container a#logoutBtn {
+  color: #fff;
+  text-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen;
+}
+
 header {
   position: fixed;
   height: 60px;
   width: 100%;
   z-index: 1;
-  margin-right: 15px;
+  margin-right: 0px;
   padding: 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -11,11 +23,21 @@ header {
 }
 
 header div#header_container {
-  background-color: #001e43;
-  width: 600px;
   height: 100%;
   margin: 0 auto;
   position: relative;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container {
+    width: 100%;
+  }
 }
 
 header div#header_container div#userId_info {
@@ -39,7 +61,6 @@ header div#header_container div#userId_info {
 header div#header_container div#userId_info p {
   font-weight: bold;
   font-size: large;
-  color: aliceblue;
 }
 
 @media screen and (max-width: 480px) {
@@ -52,11 +73,11 @@ header div#header_container a#logoutBtn {
   position: absolute;
   text-align: center;
   font-weight: bold;
+  top: 10px;
 }
 
 @media screen and (min-width: 481px) {
   header div#header_container a#logoutBtn {
-    top: 10px;
     left: 80%;
     width: 100px;
   }
@@ -64,8 +85,7 @@ header div#header_container a#logoutBtn {
 
 @media screen and (max-width: 480px) {
   header div#header_container a#logoutBtn {
-    top: 15px;
-    left: 43%;
+    left: 70%;
     width: 100px;
     font-size: smaller;
   }

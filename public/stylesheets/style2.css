@@ -1,199 +1,311 @@
-@media screen and (max-width: 480px) {
-    html {
-        height: 100%;
-    }
+header div#header_container, header div#header_container a#logoutBtn, html body div#main div#green-field, html body div#main div#green-field div#brown-field, html body div#main div#green-field div#brown-field table thead tr th, html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.batter_num, html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata, html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p a, html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapsing div.card-body ul li .hitting_result, html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapse div.card-body ul li .hitting_result, html body div#main div#green-field div#brown-field a#historyGameBtn {
+  background-color: #000;
+  border: 3px solid #fff;
+  -webkit-box-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen, inset 0px 0px 3px green, inset 0px 0px 6px yellowgreen;
+          box-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen, inset 0px 0px 3px green, inset 0px 0px 6px yellowgreen;
 }
 
-html body {
-    background-color: #f4f5f7;
+header div#header_container div#userId_info p, header div#header_container a#logoutBtn, html body div#main div#green-field, html body div#main div#green-field div#brown-field table thead tr th, html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.batter_num, html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p button div, html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p a, html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapsing div.card-body ul li p, html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapsing div.card-body ul li .hitting_result a, html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapse div.card-body ul li p, html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapse div.card-body ul li .hitting_result a, html body div#main div#green-field div#brown-field a#historyGameBtn {
+  color: #fff;
+  text-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen;
 }
 
-@media screen and (max-width: 480px) {
-    html body {
-        height: 100%;
-    }
+header {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  z-index: 1;
+  margin-right: 0px;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-html body div#main {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-@media screen and (max-width: 480px) {
-    html body div#main {
-        height: 100%;
-    }
-}
-
-html body div#main div#green-field {
-    padding-top: 60px;
-    margin: 0 auto;
-    background-color: #99cc33;
+header div#header_container {
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 
 @media screen and (min-width: 481px) {
-    html body div#main div#green-field {
-        width: 600px;
-    }
+  header div#header_container {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container {
+    width: 100%;
+  }
+}
+
+header div#header_container div#userId_info {
+  position: absolute;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container div#userId_info {
+    top: 15px;
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container div#userId_info {
+    top: 20px;
+    left: 4px;
+  }
+}
+
+header div#header_container div#userId_info p {
+  font-weight: bold;
+  font-size: large;
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container div#userId_info p {
+    font-size: medium;
+  }
+}
+
+header div#header_container a#logoutBtn {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  top: 10px;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container a#logoutBtn {
+    left: 80%;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container a#logoutBtn {
+    left: 70%;
+    width: 100px;
+    font-size: smaller;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    height: 100%;
+  }
+}
+
+html body {
+  background-color: #000;
+}
+
+@media screen and (max-width: 480px) {
+  html body {
+    height: 100%;
+  }
+}
+
+html body div#main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main {
+    height: 100%;
+  }
+}
+
+html body div#main div#green-field {
+  padding-top: 60px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field {
+    width: 600px;
+  }
 }
 
 html body div#main div#green-field div#brown-field {
-    position: relative;
-    background-color: #cc6633;
-    border-width: 5px !important;
+  position: relative;
 }
 
 html body div#main div#green-field div#brown-field h2,
 html body div#main div#green-field div#brown-field h3,
 html body div#main div#green-field div#brown-field h4 {
-    color: aliceblue;
+  color: aliceblue;
 }
 
 html body div#main div#green-field div#brown-field h2 {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.batter_num {
-    width: 56px;
-    font-weight: bold;
+  width: 56px;
+  font-weight: bold;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata {
-    padding: 0;
+  padding: 0;
 }
 
 @media screen and (min-width: 481px) {
-    html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p {
-        margin: 0;
-    }
-    html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p button {
-        width: 250px;
-        font-size: 30px;
-        font-weight: bold;
-    }
-    html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p a {
-        position: relative;
-        right: -100px;
-        top: 5px;
-        width: 100px;
-    }
+  html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p {
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p {
-        margin: 3px 0 3px;
-    }
-    html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p button {
-        width: 150px;
-        font-size: 25px;
-        font-weight: bold;
-        padding: 0;
-    }
-    html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p a {
-        position: absolute;
-        right: 20px;
-    }
+  html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p {
+    margin: 3px 0 3px;
+  }
+}
+
+html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p button {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p button {
+    width: 250px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p button {
+    width: 150px;
+    font-size: 25px;
+    padding: 0;
+  }
+}
+
+html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p button div {
+  padding-left: 20px;
+}
+
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p a {
+    position: relative;
+    right: -100px;
+    top: 5px;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata p a {
+    position: relative;
+    right: -30px;
+    height: 30px;
+    width: 50px;
+    padding: 0;
+  }
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapsing div.card-body {
-    padding: 1px;
-    height: 0px !important;
+  padding: 10px 6px;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapsing div.card-body ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapsing div.card-body ul li {
-    list-style: none;
-    width: 100%;
-    height: 50px;
-    border: solid 1px black;
-    position: relative;
-    padding: 0;
+  list-style: none;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  padding: 0;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapsing div.card-body ul li p {
-    position: absolute;
-    z-index: 0;
+  position: absolute;
+  z-index: 0;
+  top: 8px;
+  left: 6px;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapsing div.card-body ul li .hitting_result {
-    width: 100%;
-    height: 100%;
-    line-height: 50px;
+  width: 100%;
+  height: 100%;
+  line-height: 50px;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapsing div.card-body ul li .hitting_result a {
-    display: inline-block;
-    vertical-align: middle;
-    width: 100%;
-    height: 100%;
-    font-weight: bold;
-    font-size: larger;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: auto;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  font-size: larger;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapse div.card-body {
-    padding: 1px;
+  padding: 10px 6px;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapse div.card-body ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapse div.card-body ul li {
-    list-style: none;
-    width: 100%;
-    height: 50px;
-    border: solid 1px black;
-    position: relative;
-    padding: 0;
+  list-style: none;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  padding: 0;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapse div.card-body ul li p {
-    position: absolute;
-    z-index: 0;
+  position: absolute;
+  z-index: 0;
+  top: 8px;
+  left: 6px;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapse div.card-body ul li .hitting_result {
-    width: 100%;
-    height: 100%;
-    line-height: 50px;
+  width: 100%;
+  height: 100%;
+  line-height: 50px;
 }
 
 html body div#main div#green-field div#brown-field table tbody tr.tablebody-tr td.tabledata div.collapse div.card-body ul li .hitting_result a {
-    display: inline-block;
-    vertical-align: middle;
-    width: 100%;
-    height: 100%;
-    font-weight: bold;
-    font-size: larger;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: auto;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  font-size: larger;
 }
 
 html body div#main div#green-field div#brown-field a#historyGameBtn {
-    position: absolute;
+  position: absolute;
 }
 
 @media screen and (min-width: 481px) {
-    html body div#main div#green-field div#brown-field a#historyGameBtn {
-        right: 60px;
-        top: 40px;
-        width: 150px;
-    }
+  html body div#main div#green-field div#brown-field a#historyGameBtn {
+    right: 40px;
+    top: 25px;
+    width: 150px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    html body div#main div#green-field div#brown-field a#historyGameBtn {
-        right: 20px;
-        top: 20px;
-        width: 120px;
-    }
+  html body div#main div#green-field div#brown-field a#historyGameBtn {
+    right: 20px;
+    top: 20px;
+    width: 120px;
+  }
 }
-
-
 /*# sourceMappingURL=style2.css.map */

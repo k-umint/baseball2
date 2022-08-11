@@ -1,0 +1,201 @@
+@import "_breakpoints";
+@import "_mixin";
+@import "header.scss";
+html {
+    @include mq(sm) {
+        height: 100%;
+    }
+    body {
+        background-color: #000;
+        @include mq(sm) {
+            height: 100%;
+        }
+        div#main {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            @include mq(sm) {
+                height: 100%;
+            }
+            div#green-field {
+                @extend %boxNeon;
+                @extend %textNeon;
+                padding-top: 60px;
+                margin: 0 auto;
+                @include mq(md) {
+                    width: 600px;
+                }
+                div#brown-field {
+                    @extend %boxNeon;
+                    position: relative;
+                    h2,
+                    h3,
+                    h4 {
+                        color: aliceblue;
+                    }
+                    h2 {
+                        text-decoration: underline;
+                    }
+                    table {
+                        thead {
+                            tr {
+                                th {
+                                    @extend %boxNeon;
+                                    @extend %textNeon;
+                                }
+                            }
+                        }
+                        tbody {
+                            tr.tablebody-tr {
+                                td.batter_num {
+                                    @extend %boxNeon;
+                                    @extend %textNeon;
+                                    width: 56px;
+                                    font-weight: bold;
+                                }
+                                td.tabledata {
+                                    @extend %boxNeon;
+                                    padding: 0;
+                                    p {
+                                        @include mq(md) {
+                                            margin: 0;
+                                        }
+                                        @include mq(sm) {
+                                            margin: 3px 0 3px;
+                                        }
+                                        button {
+                                            font-weight: bold;
+                                            @include mq(md) {
+                                                width: 250px;
+                                                font-size: 30px;
+                                            }
+                                            @include mq(sm) {
+                                                width: 150px;
+                                                font-size: 25px;
+                                                padding: 0;
+                                            }
+                                            div {
+                                                @extend %textNeon;
+                                                padding-left: 20px;
+                                            }
+                                        }
+                                        a {
+                                            @extend %boxNeon;
+                                            @extend %textNeon;
+                                            @include mq(md) {
+                                                position: relative;
+                                                right: -100px;
+                                                top: 5px;
+                                                width: 100px;
+                                            }
+                                            @include mq(sm) {
+                                                // position: absolute;
+                                                position: relative;
+                                                right: -30px;
+                                                // top: 50px;
+                                                height: 30px;
+                                                width: 50px;
+                                                padding: 0;
+                                            }
+                                        }
+                                    }
+                                    div.collapsing {
+                                        div.card-body {
+                                            padding: 10px 6px;
+                                            ul {
+                                                display: flex;
+                                                li {
+                                                    list-style: none;
+                                                    width: 100%;
+                                                    height: 50px;
+                                                    position: relative;
+                                                    padding: 0;
+                                                    p {
+                                                        @extend %textNeon;
+                                                        position: absolute;
+                                                        z-index: 0;
+                                                        top: 8px;
+                                                        left: 6px;
+                                                    }
+                                                    .hitting_result {
+                                                        @extend %boxNeon;
+                                                        width: 100%;
+                                                        height: 100%;
+                                                        line-height: 50px;
+                                                        a {
+                                                            @extend %textNeon;
+                                                            text-decoration: none;
+                                                            display: inline-block;
+                                                            vertical-align: auto;
+                                                            width: 100%;
+                                                            height: 100%;
+                                                            font-weight: bold;
+                                                            font-size: larger;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    div.collapse {
+                                        div.card-body {
+                                            padding: 10px 6px;
+                                            ul {
+                                                display: flex;
+                                                li {
+                                                    list-style: none;
+                                                    width: 100%;
+                                                    height: 50px;
+                                                    position: relative;
+                                                    padding: 0;
+                                                    p {
+                                                        @extend %textNeon;
+                                                        position: absolute;
+                                                        z-index: 0;
+                                                        top: 8px;
+                                                        left: 6px;
+                                                    }
+                                                    .hitting_result {
+                                                        @extend %boxNeon;
+                                                        width: 100%;
+                                                        height: 100%;
+                                                        line-height: 50px;
+                                                        a {
+                                                            @extend %textNeon;
+                                                            text-decoration: none;
+                                                            display: inline-block;
+                                                            vertical-align: auto;
+                                                            width: 100%;
+                                                            height: 100%;
+                                                            font-weight: bold;
+                                                            font-size: larger;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    a#historyGameBtn {
+                        @extend %boxNeon;
+                        @extend %textNeon;
+                        position: absolute;
+                        @include mq(md) {
+                            right: 40px;
+                            top: 25px;
+                            width: 150px;
+                        }
+                        @include mq(sm) {
+                            right: 20px;
+                            top: 20px;
+                            width: 120px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

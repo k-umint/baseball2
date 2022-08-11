@@ -1,226 +1,323 @@
+header div#header_container, header div#header_container a#logoutBtn, html body div#main div#green-field, html body div#main div#green-field div#brown-field, html body div#main div#green-field div#brown-field div#white-field, html body div#main div#green-field div#brown-field div#white-field form input#login_id, html body div#main div#green-field div#brown-field div#white-field form input#login_pass, html body div#main div#green-field div#brown-field div#white-field form input#loginBtn {
+  background-color: #000;
+  border: 3px solid #fff;
+  -webkit-box-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen, inset 0px 0px 3px green, inset 0px 0px 6px yellowgreen;
+          box-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen, inset 0px 0px 3px green, inset 0px 0px 6px yellowgreen;
+}
+
+header div#header_container div#userId_info p, header div#header_container a#logoutBtn, html body div#main div#green-field div#brown-field div#white-field, html body div#main div#green-field div#brown-field div#white-field #title_login, html body div#main div#green-field div#brown-field div#white-field form input#login_id, html body div#main div#green-field div#brown-field div#white-field form input#login_pass, html body div#main div#green-field div#brown-field div#white-field form input#loginBtn, html body div#main div#green-field div#brown-field div#white-field a#registBtn {
+  color: #fff;
+  text-shadow: 0px 0px 3px green, 0px 0px 6px yellowgreen;
+}
+
+header {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  z-index: 1;
+  margin-right: 0px;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header div#header_container {
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container {
+    width: 600px;
+  }
+}
+
 @media screen and (max-width: 480px) {
-    html {
-        height: 100%;
-    }
+  header div#header_container {
+    width: 100%;
+  }
+}
+
+header div#header_container div#userId_info {
+  position: absolute;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container div#userId_info {
+    top: 15px;
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container div#userId_info {
+    top: 20px;
+    left: 4px;
+  }
+}
+
+header div#header_container div#userId_info p {
+  font-weight: bold;
+  font-size: large;
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container div#userId_info p {
+    font-size: medium;
+  }
+}
+
+header div#header_container a#logoutBtn {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  top: 10px;
+}
+
+@media screen and (min-width: 481px) {
+  header div#header_container a#logoutBtn {
+    left: 80%;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div#header_container a#logoutBtn {
+    left: 70%;
+    width: 100px;
+    font-size: smaller;
+  }
+}
+
+html {
+  background-color: #000;
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    height: 100%;
+  }
 }
 
 html body {
-    background-color: #f4f5f7;
+  background-color: #f4f5f7;
 }
 
 @media screen and (max-width: 480px) {
-    html body {
-        height: 100%;
-    }
+  html body {
+    height: 100%;
+  }
 }
 
 html body div#main {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 @media screen and (max-width: 480px) {
-    html body div#main {
-        height: 100%;
-    }
+  html body div#main {
+    height: 100%;
+  }
 }
 
 html body div#main div#green-field {
-    padding-top: 60px;
-    margin: 0 auto;
-    background-color: #99cc33;
+  padding-top: 60px;
+  margin: 0 auto;
+  background-color: #000;
 }
 
 @media screen and (min-width: 481px) {
-    html body div#main div#green-field {
-        width: 600px;
-    }
+  html body div#main div#green-field {
+    width: 600px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    html body div#main div#green-field {
-        height: 100%;
-    }
+  html body div#main div#green-field {
+    height: 100%;
+  }
 }
 
 html body div#main div#green-field div#brown-field {
-    background-color: #cc6633;
-    border-width: 5px !important;
-    padding: 0;
+  padding: 0;
 }
 
 @media screen and (min-width: 481px) {
-    html body div#main div#green-field div#brown-field {
-        height: 700px;
-    }
+  html body div#main div#green-field div#brown-field {
+    height: 700px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    html body div#main div#green-field div#brown-field {
-        height: 94%;
-    }
+  html body div#main div#green-field div#brown-field {
+    height: 94%;
+  }
 }
 
 html body div#main div#green-field div#brown-field div#white-field {
-    height: 94%;
-    background-color: #fff;
-    position: relative;
+  height: 94%;
+  position: relative;
 }
 
 @media screen and (min-width: 481px) {
-    html body div#main div#green-field div#brown-field div#white-field {
-        margin: 20px;
-    }
-    html body div#main div#green-field div#brown-field div#white-field #title_login {
-        position: absolute;
-        text-align: center;
-        width: 90%;
-        height: auto;
-        top: 70px;
-        left: 50%;
-        -webkit-transform: translateY(0) translateX(-50%);
-        transform: translateY(0) translateX(-50%);
-        font-size: 50px;
-        font-weight: bold;
-    }
-    html body div#main div#green-field div#brown-field div#white-field form input#login_id {
-        position: absolute;
-        width: 40%;
-        height: auto;
-        top: 190px;
-        left: 50%;
-        -webkit-transform: translateY(0) translateX(-50%);
-        transform: translateY(0) translateX(-50%);
-        font-size: 30px;
-        text-align: left;
-        background-color: #dae3f3;
-    }
-    html body div#main div#green-field div#brown-field div#white-field form input#login_pass {
-        position: absolute;
-        width: 40%;
-        height: auto;
-        top: 260px;
-        left: 50%;
-        -webkit-transform: translateY(0) translateX(-50%);
-        transform: translateY(0) translateX(-50%);
-        font-size: 30px;
-        text-align: left;
-        background-color: #dae3f3;
-    }
-    html body div#main div#green-field div#brown-field div#white-field form h5#error-message {
-        width: 100%;
-        position: absolute;
-        top: 315px;
-        left: 50%;
-        -webkit-transform: translateY(0) translateX(-50%);
-        transform: translateY(0) translateX(-50%);
-        text-align: center;
-        color: red;
-    }
-    html body div#main div#green-field div#brown-field div#white-field form input#loginBtn {
-        position: absolute;
-        text-align: center;
-        top: 400px;
-        height: auto;
-        padding: 0;
-        width: 40%;
-        left: 50%;
-        -webkit-transform: translateY(0) translateX(-50%);
-        transform: translateY(0) translateX(-50%);
-        font-size: 30px;
-    }
-    html body div#main div#green-field div#brown-field div#white-field a#registBtn {
-        position: absolute;
-        text-align: center;
-        text-decoration: underline;
-        width: 40%;
-        height: auto;
-        padding: 0;
-        top: 470px;
-        left: 50%;
-        -webkit-transform: translateY(0) translateX(-50%);
-        transform: translateY(0) translateX(-50%);
-        font-size: 30px;
-    }
+  html body div#main div#green-field div#brown-field div#white-field {
+    margin: 20px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    html body div#main div#green-field div#brown-field div#white-field {
-        margin: 15px;
-    }
-    html body div#main div#green-field div#brown-field div#white-field #title_login {
-        position: absolute;
-        text-align: center;
-        width: 90%;
-        height: auto;
-        top: 40px;
-        left: 50%;
-        -webkit-transform: translateY(0) translateX(-50%);
-        transform: translateY(0) translateX(-50%);
-        font-size: 50px;
-        font-weight: bold;
-    }
-    html body div#main div#green-field div#brown-field div#white-field form input#login_id {
-        position: absolute;
-        width: 70%;
-        height: auto;
-        top: 140px;
-        left: 50%;
-        -webkit-transform: translateY(0) translateX(-50%);
-        transform: translateY(0) translateX(-50%);
-        font-size: 25px;
-        text-align: left;
-        background-color: #dae3f3;
-    }
-    html body div#main div#green-field div#brown-field div#white-field form input#login_pass {
-        position: absolute;
-        width: 70%;
-        height: auto;
-        top: 210px;
-        left: 50%;
-        -webkit-transform: translateY(0) translateX(-50%);
-        transform: translateY(0) translateX(-50%);
-        font-size: 25px;
-        text-align: left;
-        background-color: #dae3f3;
-    }
-    html body div#main div#green-field div#brown-field div#white-field form h5#error-message {
-        width: 100%;
-        position: absolute;
-        top: 270px;
-        left: 50%;
-        -webkit-transform: translateY(0) translateX(-50%);
-        transform: translateY(0) translateX(-50%);
-        text-align: center;
-        color: red;
-    }
-    html body div#main div#green-field div#brown-field div#white-field form input#loginBtn {
-        position: absolute;
-        text-align: center;
-        width: 70%;
-        height: auto;
-        padding: 0;
-        top: 300px;
-        left: 50%;
-        -webkit-transform: translateY(0) translateX(-50%);
-        transform: translateY(0) translateX(-50%);
-        font-size: 30px;
-    }
-    html body div#main div#green-field div#brown-field div#white-field a#registBtn {
-        position: absolute;
-        text-align: center;
-        text-decoration: underline;
-        width: 40%;
-        height: auto;
-        padding: 0;
-        top: 360px;
-        left: 50%;
-        -webkit-transform: translateY(0) translateX(-50%);
-        transform: translateY(0) translateX(-50%);
-        font-size: 30px;
-    }
+  html body div#main div#green-field div#brown-field div#white-field {
+    margin: 15px;
+  }
 }
 
+html body div#main div#green-field div#brown-field div#white-field #title_login {
+  position: absolute;
+  text-align: center;
+  width: 90%;
+  height: auto;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 50px;
+  font-weight: bold;
+}
 
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field div#white-field #title_login {
+    top: 70px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field #title_login {
+    top: 40px;
+  }
+}
+
+html body div#main div#green-field div#brown-field div#white-field form input#login_id {
+  position: absolute;
+  height: auto;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  text-align: left;
+}
+
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field div#white-field form input#login_id {
+    width: 40%;
+    top: 190px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field form input#login_id {
+    width: 70%;
+    top: 140px;
+    font-size: 25px;
+  }
+}
+
+html body div#main div#green-field div#brown-field div#white-field form input#login_pass {
+  position: absolute;
+  left: 50%;
+  height: auto;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  text-align: left;
+}
+
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field div#white-field form input#login_pass {
+    width: 40%;
+    top: 260px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field form input#login_pass {
+    width: 70%;
+    top: 210px;
+    font-size: 25px;
+  }
+}
+
+html body div#main div#green-field div#brown-field div#white-field form h5#error-message {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  text-align: center;
+  color: red;
+}
+
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field div#white-field form h5#error-message {
+    top: 315px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field form h5#error-message {
+    top: 270px;
+  }
+}
+
+html body div#main div#green-field div#brown-field div#white-field form input#loginBtn {
+  position: absolute;
+  text-align: center;
+  height: auto;
+  padding: 0;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 30px;
+}
+
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field div#white-field form input#loginBtn {
+    top: 400px;
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field form input#loginBtn {
+    top: 300px;
+    width: 70%;
+  }
+}
+
+html body div#main div#green-field div#brown-field div#white-field a#registBtn {
+  position: absolute;
+  text-align: center;
+  text-decoration: underline;
+  width: 40%;
+  height: auto;
+  padding: 0;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+  font-size: 30px;
+}
+
+@media screen and (min-width: 481px) {
+  html body div#main div#green-field div#brown-field div#white-field a#registBtn {
+    top: 470px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html body div#main div#green-field div#brown-field div#white-field a#registBtn {
+    top: 360px;
+  }
+}
 /*# sourceMappingURL=style_login.css.map */

@@ -9,12 +9,12 @@
                     <%- player.name %>
                 </div>
             </button>
-            <a class="text-center btn btn-success" href="/player?order=<%- player.order %>&name=<%- player.name %>">
+            <a class="text-center btn" href="/player?order=<%- player.order %>&name=<%- player.name %>">
                 変更
             </a>
         </p>
         <div class="collapse" id="collapse<%- player.order %>">
-            <div class="card card-body">
+            <div class="card-body">
                 <ul class="list-group">
                     <% let boxArr=[player.box_1,player.box_2,player.box_3,player.box_4,player.box_5,player.box_6]; %>
                         <% let boxArrMod=[] %>

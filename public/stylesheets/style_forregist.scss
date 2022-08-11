@@ -1,0 +1,163 @@
+@import "_breakpoints";
+@import "_mixin";
+@import "header.scss";
+html {
+    background-color: #000;
+    @include mq(sm) {
+        height: 100%;
+    }
+    body {
+        @include mq(sm) {
+            height: 100%;
+        }
+        div#main {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            @include mq(sm) {
+                height: 100%;
+            }
+            div#green-field {
+                @extend %boxNeon;
+                padding-top: 60px;
+                margin: 0 auto;
+                background-color: #000;
+                @include mq(md) {
+                    width: 600px;
+                }
+                @include mq(sm) {
+                    height: 100%;
+                }
+                div#brown-field {
+                    @extend %boxNeon;
+                    padding: 0;
+                    @include mq(md) {
+                        height: 700px;
+                    }
+                    @include mq(sm) {
+                        height: 94%;
+                    }
+                    div#white-field {
+                        @extend %boxNeon;
+                        @extend %textNeon;
+                        height: 94%;
+                        position: relative;
+                        @include mq(md) {
+                            margin: 20px;
+                        }
+                        @include mq(sm) {
+                            margin: 15px;
+                        }
+                        h5#error-message {
+                            width: 100%;
+                            position: absolute;
+                            top: 10px;
+                            left: 50%;
+                            transform: translateY(0) translateX(-50%);
+                            text-align: center;
+                            color: red;
+                        }
+                        #title_regist {
+                            @extend %textNeon;
+                            position: absolute;
+                            text-align: center;
+                            width: 90%;
+                            height: auto;
+                            transform: translateY(0) translateX(-50%);
+                            font-size: 50px;
+                            font-weight: bold;
+                            @include mq(md) {
+                                top: 70px;
+                                left: 50%;
+                            }
+                            @include mq(sm) {
+                                top: 50px;
+                                left: 50%;
+                            }
+                        }
+                        form {
+                            input#regist_id {
+                                @extend %boxNeon;
+                                @extend %textNeon;
+                                position: absolute;
+                                height: auto;
+                                text-align: left;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                @include mq(md) {
+                                    width: 40%;
+                                    top: 190px;
+                                    font-size: 30px;
+                                }
+                                @include mq(sm) {
+                                    width: 70%;
+                                    top: 140px;
+                                    font-size: 25px;
+                                }
+                            }
+                            input#regist_pass {
+                                @extend %boxNeon;
+                                @extend %textNeon;
+                                position: absolute;
+                                text-align: left;
+                                height: auto;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                @include mq(md) {
+                                    width: 40%;
+                                    top: 260px;
+                                    font-size: 30px;
+                                }
+                                @include mq(sm) {
+                                    width: 70%;
+                                    top: 210px;
+                                    font-size: 25px;
+                                }
+                            }
+                            input#registBtn {
+                                @extend %boxNeon;
+                                @extend %textNeon;
+                                position: absolute;
+                                text-align: center;
+                                height: auto;
+                                padding: 0;
+                                left: 50%;
+                                transform: translateY(0) translateX(-50%);
+                                font-size: 30px;
+                                @include mq(md) {
+                                    top: 400px;
+                                    width: 40%;
+                                }
+                                @include mq(sm) {
+                                    width: 70%;
+                                    top: 300px;
+                                }
+                            }
+                        }
+                        a#loginBtn {
+                            @extend %textNeon;
+                            position: absolute;
+                            text-align: center;
+                            text-decoration: underline;
+                            height: auto;
+                            padding: 0;
+                            left: 50%;
+                            transform: translateY(0) translateX(-50%);
+                            @include mq(md) {
+                                width: 40%;
+                                top: 470px;
+                                font-size: larger;
+                            }
+                            @include mq(sm) {
+                                width: 60%;
+                                top: 380px;
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

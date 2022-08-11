@@ -26,8 +26,8 @@
             <!-- <div class="container"> -->
             <!-- <div id="green-field" class="row justify-content-center align-self-center bg-success"> -->
             <div id="green-field" class="row">
-                <div id="brown-field" class="col border border-white m-3">
-                    <div id="white-field" class="border border-dark rounded m-2">
+                <div id="brown-field" class="colm-3">
+                    <div id="white-field" class="rounded m-2">
 
                         <div id="order_div">打順 :
                             <%- responseBody.playerInfo[0].orderNo %>
@@ -35,7 +35,7 @@
 
                         <form action="/change" method="post">
                             <div id="name_div">名前：</div>
-                            <input id="name" class="border border-dark rounded text-start" name="name" onchange="changeNameFlg()" value="<%- responseBody.playerInfo[0].playerName %>"></input>
+                            <input id="name" class="rounded text-start" name="name" onchange="changeNameFlg()" value="<%- responseBody.playerInfo[0].playerName %>"></input>
                             <div id="position_div">守備：
                                 <data id="position_hidden" value='<%- responseBody.playerInfo[0].position %>' hidden></data>
                             </div>
@@ -46,10 +46,10 @@
                             <input id="changeNameFlag" type="hidden" name="changeNameFlag" value=0>
                             <input id="changePositionFlag" type="hidden" name="changePositionFlag" value=0>
                             <input id="" type="hidden" name="order" value="<%- responseBody.playerInfo[0].orderNo %> ">
-                            <input id="resultEnterBtn" class="btn btn-success btn-lg" type="submit" value="変更">
+                            <input id="resultEnterBtn" class="btn btn-lg" type="submit" value="変更">
                         </form>
 
-                        <a href="/back" id="back" class="btn btn-warning">戻る</a>
+                        <a href="/back" id="back" class="btn">戻る</a>
 
                     </div>
                 </div>

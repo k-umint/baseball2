@@ -26,8 +26,8 @@
             <!-- <div class="container"> -->
             <!-- <div id="green-field" class="row justify-content-center align-self-center bg-success"> -->
             <div id="green-field" class="row">
-                <div id="brown-field" class="col border border-white m-3">
-                    <div id="white-field" class="border border-dark rounded m-2">
+                <div id="brown-field" class="col m-3">
+                    <div id="white-field" class="rounded m-2">
                         <!-- <div id="order">打順 : 1</div>
                     <div id="name">新村一真 #2</div>
                     <div id="box_count">第四打席</div>
@@ -53,14 +53,14 @@
 
                         <form action="/scorebook?_method=PUT" method="post">
                             <!-- <input type="hidden" name="_method" value="PUT"> -->
-                            <input class="border border-dark rounded" id="result" name="result" onchange="changeFlg()" value="<%- responseBody.batterInfo[0].boxResult %>" maxlength="3"></input>
+                            <input id="result" class="rounded" name="result" onchange="changeFlg()" value="<%- responseBody.batterInfo[0].boxResult %>" maxlength="3"></input>
                             <input id="orderNum" type="hidden" name="orderNum" value=<%- responseBody.batterInfo[0].orderNo %>>
                             <input id="boxNum" type="hidden" name="boxNum" value=<%- responseBody.batterInfo[0].boxNum %>>
                             <input id="changeFlag" type="hidden" name="changeFlag" value=0>
-                            <input id="resultEnterBtn" class="btn btn-success btn-lg" type="submit" value="決定">
+                            <input id="resultEnterBtn" class="btn btn-lg" type="submit" value="決定">
                         </form>
 
-                        <a href="/back" id="back" class="btn btn-warning">戻る</a>
+                        <a href="/back" id="back" class="btn">戻る</a>
 
                     </div>
                 </div>

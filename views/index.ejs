@@ -34,7 +34,7 @@
             <!-- <div class="container"> -->
             <!-- <div id="green-field" class="row justify-content-center align-self-center bg-success"> -->
             <div id="green-field" class="row">
-                <div id="brown-field" class="col border border-white rounded-3 m-3">
+                <div id="brown-field" class="col rounded-3 m-3">
                     <div id="title">Batting Results</div>
                     <form method="post" action="/members">
                         <input type="hidden" id="date_hidden" name="date_hidden"></input>
@@ -42,15 +42,15 @@
                             <input type="date" id="date_input" name="date_input"></input>
                         </label>
                         <div id="vs">VS</div>
-                        <input type="text" id="opponent" class="border border-dark rounded form-control" name="opponent" placeholder="Opponent"></input>
+                        <input type="text" id="opponent" class="rounded form-control" name="opponent" placeholder="Opponent"></input>
                         <% if(error) {%>
                             <h3 class="text-center">
                                 <%- error %>
                             </h3>
                             <%} %>
-                                <input type="submit" id="gameStartBtn" class="btn shadow" value="試合開始"></input>
+                                <input type="submit" id="gameStartBtn" class="btn" value="試合開始"></input>
                     </form>
-                    <a href=/games_history id="historyGameBtn" class="btn btn-light shadow">過去の成績</a>
+                    <a href=/games_history id="historyGameBtn" class="btn">過去の成績</a>
                 </div>
             </div>
         </div>
